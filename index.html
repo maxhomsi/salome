@@ -2,409 +2,158 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salomé All Mare — Ilha da Gigoia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Salomé">
+<meta name="theme-color" content="#071420">
+<link rel="manifest" href="manifest.json">
+<title>Salomé All Mare</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-/* HOME-SPECIFIC */
-#hero {
-  height: 100vh; min-height: 640px;
-  display: flex; flex-direction: column;
-  justify-content: flex-end; padding: 0 5vw 9vh;
-  position: relative; overflow: hidden;
-}
-#hero .bg {
-  position: absolute; inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=1920&q=85');
-  background-size: cover; background-position: center 40%;
-  transform: scale(1.04);
-  transition: transform 8s ease-out;
-}
-#hero .bg.loaded { transform: scale(1); }
-#hero .overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(160deg, rgba(7,20,32,0.55) 0%, rgba(7,20,32,0.2) 40%, rgba(7,20,32,0.85) 80%, rgba(7,20,32,1) 100%);
-}
-#hero .grid-lines {
-  position: absolute; inset: 0; opacity: 0.04;
-  background-image:
-    linear-gradient(rgba(242,232,213,1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(242,232,213,1) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-.hero-content { position: relative; z-index: 2; max-width: 860px; }
-.hero-content .eyebrow { animation: fadeUp 0.9s 0.2s both; }
-.hero-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(4rem, 10vw, 9.5rem);
-  font-weight: 300; line-height: 0.9; color: var(--sand);
-  animation: fadeUp 0.9s 0.35s both;
-}
-.hero-title em { display: block; }
-.hero-sub {
-  margin-top: 2rem; max-width: 500px;
-  font-size: 1.05rem; line-height: 1.85; color: var(--muted);
-  animation: fadeUp 0.9s 0.55s both;
-}
-.hero-actions {
-  margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap;
-  animation: fadeUp 0.9s 0.7s both;
-}
-.hero-scroll {
-  position: absolute; right: 5vw; bottom: 9vh; z-index: 2;
-  writing-mode: vertical-rl; font-size: 0.66rem; letter-spacing: 0.22em;
-  text-transform: uppercase; opacity: 0.35;
-  animation: fadeUp 0.9s 1.1s both;
-}
-
-/* FEATURES STRIP */
-.features-strip {
-  background: var(--ocean);
-  border-top: 0.5px solid var(--border);
-  border-bottom: 0.5px solid var(--border);
-  display: grid; grid-template-columns: repeat(4, 1fr);
-}
-.feature-item {
-  padding: 2rem 1.8rem;
-  border-right: 0.5px solid var(--border);
-  display: flex; gap: 1rem; align-items: flex-start;
-}
-.feature-item:last-child { border-right: none; }
-.feature-icon { font-size: 1.4rem; opacity: 0.7; flex-shrink: 0; margin-top: 2px; }
-.feature-title { font-size: 0.88rem; color: var(--sand); font-weight: 400; margin-bottom: 0.25rem; }
-.feature-desc { font-size: 0.78rem; line-height: 1.6; }
-
-/* INTRO SPLIT */
-.intro-split {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-  min-height: 560px;
-}
-.intro-text {
-  background: var(--deep);
-  padding: 5rem; display: flex; flex-direction: column; justify-content: center;
-}
-.intro-text p { font-size: 1rem; line-height: 1.9; margin-bottom: 1.1rem; }
-.intro-text p strong { color: var(--gold-light); font-weight: 400; }
-.intro-img { position: relative; min-height: 480px; }
-.intro-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.intro-img-badge {
-  position: absolute; bottom: 2.5rem; left: -2.5rem;
-  background: var(--ocean); border: 0.5px solid var(--border);
-  padding: 1.5rem 2rem; z-index: 2;
-}
-.intro-img-badge .big {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.8rem; color: var(--gold-light); font-weight: 300; line-height: 1;
-}
-.intro-img-badge .small { font-size: 0.72rem; letter-spacing: 0.14em; opacity: 0.55; }
-
-/* HIGHLIGHTS */
-.highlight-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
-}
-.highlight-card {
-  position: relative; overflow: hidden;
-  aspect-ratio: 3/4; cursor: pointer;
-}
-.highlight-card img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform 0.6s ease;
-}
-.highlight-card:hover img { transform: scale(1.05); }
-.highlight-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(7,20,32,0.92) 0%, rgba(7,20,32,0.1) 55%);
-  transition: background 0.4s;
-}
-.highlight-card:hover .highlight-overlay {
-  background: linear-gradient(to top, rgba(7,20,32,0.96) 0%, rgba(7,20,32,0.25) 55%);
-}
-.highlight-content {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 2.5rem 2rem;
-}
-.highlight-tag {
-  font-size: 0.62rem; letter-spacing: 0.26em; text-transform: uppercase;
-  color: var(--coral-light); margin-bottom: 0.6rem; display: block;
-}
-.highlight-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem; color: var(--sand); font-weight: 300; line-height: 1.2;
-}
-.highlight-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold-light); text-decoration: none; margin-top: 1rem;
-  opacity: 0; transform: translateY(8px);
-  transition: opacity 0.3s, transform 0.3s;
-}
-.highlight-card:hover .highlight-link { opacity: 1; transform: none; }
-.highlight-link::after { content: '→'; }
-
-/* MENU PREVIEW */
-.menu-preview {
-  display: grid; grid-template-columns: 1fr 1.4fr; gap: 0; min-height: 500px;
-}
-.menu-preview-text {
-  background: var(--ocean); padding: 5rem;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.menu-preview-list { margin-top: 3rem; }
-.menu-preview-item {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding: 1.4rem 0; border-bottom: 0.5px solid var(--border);
-}
-.menu-preview-item:first-child { border-top: 0.5px solid var(--border); }
-.menu-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.2rem; color: var(--sand); font-weight: 400;
-}
-.menu-tag { font-size: 0.7rem; opacity: 0.5; letter-spacing: 0.1em; }
-.menu-preview-img { position: relative; overflow: hidden; }
-.menu-preview-img img { width: 100%; height: 100%; object-fit: cover; }
-
-/* RESERVA BANNER */
-.reserva-banner {
-  background: var(--coral);
-  padding: 5rem 5vw;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 3rem; flex-wrap: wrap;
-}
-.reserva-banner h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 4vw, 3.5rem); color: var(--ivory);
-  font-weight: 300;
-}
-.reserva-banner p { color: rgba(251,247,239,0.75); max-width: 380px; font-size: 0.95rem; }
-.btn-ivory {
-  background: var(--ivory); color: var(--coral);
-  padding: 1rem 2.6rem; text-decoration: none;
-  font-family: 'Jost', sans-serif; font-size: 0.78rem;
-  letter-spacing: 0.18em; text-transform: uppercase; white-space: nowrap;
-  transition: background 0.2s;
-}
-.btn-ivory:hover { background: var(--sand); }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 900px) {
-  .intro-split, .menu-preview { grid-template-columns: 1fr; }
-  .intro-text { padding: 3rem; }
-  .menu-preview-text { padding: 3rem; }
-  .highlight-grid { grid-template-columns: 1fr; }
-  .features-strip { grid-template-columns: 1fr 1fr; }
-}
-</style>
+<link rel="stylesheet" href="app.css">
 </head>
 <body>
 
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">Salomé All Mare <span>Ilha da Gigoia · Rio de Janeiro</span></a>
-  <ul class="nav-center">
-    <li><a href="sobre.html">O Restaurante</a></li>
-    <li><a href="cardapio.html">Cardápio</a></li>
-    <li><a href="galeria.html">Galeria</a></li>
-    <li><a href="como-chegar.html">Como Chegar</a></li>
-    <li><a href="contato.html">Contato</a></li>
-  </ul>
-  <a href="reservas.html" class="nav-cta">Reservar Mesa</a>
-</nav>
+<!-- HEADER -->
+<header class="app-header">
+  <a href="index.html" class="app-header-logo">Salomé All Mare <span>Ilha da Gigoia · Rio de Janeiro</span></a>
+  <a href="reservas.html" class="app-header-action" title="Reservar">🍽️</a>
+</header>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="bg" id="heroBg"></div>
-  <div class="overlay"></div>
-  <div class="grid-lines"></div>
-  <div class="hero-content">
-    <div class="eyebrow">Polo Gastronômico · Ilha Primeira</div>
-    <h1 class="hero-title">Salomé<br><em>All Mare</em></h1>
-    <p class="hero-sub">Frutos do mar frescos, brisa da lagoa e uma vista que você não esquece — em uma ilha que só se chega de barco.</p>
-    <div class="hero-actions">
-      <a href="cardapio.html" class="btn btn-primary">Explorar Cardápio</a>
-      <a href="reservas.html" class="btn btn-outline">Fazer Reserva</a>
-    </div>
-  </div>
-  <span class="hero-scroll">Role para descobrir</span>
-</section>
+<!-- PAGE -->
+<main class="page">
 
-<!-- FEATURES STRIP -->
-<div class="features-strip">
-  <div class="feature-item reveal">
-    <div class="feature-icon">🦐</div>
-    <div>
-      <div class="feature-title">Frutos do Mar Frescos</div>
-      <div class="feature-desc">Seleção diária do melhor do mar</div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=900&q=85')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Ilha Primeira · Barra da Tijuca</div>
+      <h1>Salomé<br><em>All Mare</em></h1>
+      <p class="hero-sub">Frutos do mar frescos à beira da lagoa, em uma ilha que só se chega de barco.</p>
+      <div class="hero-actions">
+        <a href="cardapio.html" class="btn btn-primary">Ver Cardápio</a>
+        <a href="reservas.html" class="btn btn-outline">Reservar</a>
+      </div>
     </div>
   </div>
-  <div class="feature-item reveal" style="transition-delay:.1s">
-    <div class="feature-icon">🌊</div>
-    <div>
-      <div class="feature-title">Vista da Lagoa</div>
-      <div class="feature-desc">Mesas à beira d'água, brisa constante</div>
-    </div>
-  </div>
-  <div class="feature-item reveal" style="transition-delay:.2s">
-    <div class="feature-icon">⚓</div>
-    <div>
-      <div class="feature-title">Acesso de Barco</div>
-      <div class="feature-desc">Uma ilha exclusiva na Barra da Tijuca</div>
-    </div>
-  </div>
-  <div class="feature-item reveal" style="transition-delay:.3s">
-    <div class="feature-icon">🏅</div>
-    <div>
-      <div class="feature-title">Melhor Pastel da Ilha</div>
-      <div class="feature-desc">O famoso pastel de camarão da casa</div>
-    </div>
-  </div>
-</div>
 
-<!-- INTRO SPLIT -->
-<div class="intro-split">
-  <div class="intro-text reveal">
+  <!-- FEATURES -->
+  <div class="feat-grid reveal">
+    <div class="feat-card">
+      <div class="feat-icon">🦐</div>
+      <div class="feat-title">Frutos do Mar Frescos</div>
+      <div class="feat-desc">Seleção diária do melhor do mar</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🌊</div>
+      <div class="feat-title">Vista da Lagoa</div>
+      <div class="feat-desc">Mesas à beira d'água</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚓</div>
+      <div class="feat-title">Acesso de Barco</div>
+      <div class="feat-desc">Ilha exclusiva na Barra</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🏅</div>
+      <div class="feat-title">Melhor Pastel</div>
+      <div class="feat-desc">Famoso pastel de camarão</div>
+    </div>
+  </div>
+
+  <!-- DESTAQUES -->
+  <div class="sec-header reveal">
+    <span class="section-label">Destaques</span>
+    <h2 class="section-title">Não <em>perca</em></h2>
+  </div>
+  <div class="hscroll" style="padding-top:1rem">
+    <div class="hcard">
+      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=400&q=80" alt="Tábua de Frutos do Mar">
+      <div class="hcard-overlay"></div>
+      <div class="hcard-content">
+        <div class="hcard-tag">Para Compartilhar</div>
+        <div class="hcard-title">Tábua de Frutos do Mar</div>
+      </div>
+    </div>
+    <div class="hcard">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&w=400&q=80" alt="Pastel de Camarão">
+      <div class="hcard-overlay"></div>
+      <div class="hcard-content">
+        <div class="hcard-tag">★ Carro-chefe</div>
+        <div class="hcard-title">Pastel de Camarão</div>
+      </div>
+    </div>
+    <div class="hcard">
+      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=400&q=80" alt="Prato do Chef">
+      <div class="hcard-overlay"></div>
+      <div class="hcard-content">
+        <div class="hcard-tag">Prato Principal</div>
+        <div class="hcard-title">Moqueca Carioca</div>
+      </div>
+    </div>
+    <div class="hcard">
+      <img src="https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=400&q=80" alt="Vista da Lagoa">
+      <div class="hcard-overlay"></div>
+      <div class="hcard-content">
+        <div class="hcard-tag">Atmosfera</div>
+        <div class="hcard-title">Vista da Lagoa</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOBRE TEASER -->
+  <div class="about-img reveal">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&w=800&q=85" alt="Interior do restaurante">
+    <div class="about-badge">
+      <div class="big">★ 4.8</div>
+      <div class="small">Avaliação dos clientes</div>
+    </div>
+  </div>
+  <div class="about-text reveal">
     <span class="section-label">O Restaurante</span>
     <h2 class="section-title">Uma experiência<br>além do <em>prato</em></h2>
     <div class="divider"></div>
-    <p>O <strong>Salomé All Mare</strong> é um dos pilares do polo gastronômico da Ilha Primeira. Com ambiente acolhedor à beira da lagoa e uma cozinha que celebra o mar, o restaurante é uma parada obrigatória para quem explora a Ilha da Gigoia.</p>
-    <p>Famoso pelo <strong>pastel de camarão crocante</strong> e pelas fartas tábuas de frutos do mar, o Salomé transforma cada refeição em uma memória afetiva do Rio de Janeiro.</p>
-    <a href="sobre.html" class="btn btn-gold" style="margin-top:2rem;width:fit-content">Nossa História →</a>
+    <p>O <strong>Salomé All Mare</strong> é um dos pilares do polo gastronômico da Ilha Primeira, na Barra da Tijuca. Ambiente acolhedor, vista para a lagoa e os melhores frutos do mar do Rio.</p>
+    <a href="sobre.html" class="btn btn-outline" style="margin-top:0.8rem">Nossa História →</a>
   </div>
-  <div class="intro-img reveal" style="transition-delay:.15s">
-    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&w=900&q=85" alt="Interior do restaurante">
-    <div class="intro-img-badge">
-      <div class="big">+10</div>
-      <div class="small">Anos de história<br>na Ilha</div>
-    </div>
-  </div>
-</div>
 
-<!-- HIGHLIGHTS -->
-<section class="section dark" style="padding: 0;">
-  <div class="highlight-grid">
-    <div class="highlight-card reveal">
-      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=700&q=80" alt="Frutos do mar">
-      <div class="highlight-overlay"></div>
-      <div class="highlight-content">
-        <span class="highlight-tag">Especialidade</span>
-        <div class="highlight-title">Tábua de Frutos do Mar</div>
-        <a href="cardapio.html" class="highlight-link">Ver Cardápio</a>
-      </div>
-    </div>
-    <div class="highlight-card reveal" style="transition-delay:.15s">
-      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&w=700&q=80" alt="Camarão">
-      <div class="highlight-overlay"></div>
-      <div class="highlight-content">
-        <span class="highlight-tag">★ Carro-chefe</span>
-        <div class="highlight-title">Pastel de Camarão</div>
-        <a href="cardapio.html" class="highlight-link">Ver Cardápio</a>
-      </div>
-    </div>
-    <div class="highlight-card reveal" style="transition-delay:.3s">
-      <img src="https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=700&q=80" alt="Vista da lagoa">
-      <div class="highlight-overlay"></div>
-      <div class="highlight-content">
-        <span class="highlight-tag">Atmosfera</span>
-        <div class="highlight-title">Vista Privilegiada da Lagoa</div>
-        <a href="galeria.html" class="highlight-link">Ver Galeria</a>
-      </div>
-    </div>
+  <!-- CTA BANNER -->
+  <div class="cta-banner reveal">
+    <h3>Reserve sua<br><em style="color:rgba(251,247,239,0.8)">mesa hoje</em></h3>
+    <p>Fins de semana lotam rápido. Garanta o seu lugar à beira da lagoa.</p>
+    <a href="reservas.html" class="btn btn-ivory btn-full">Fazer Reserva</a>
   </div>
-</section>
 
-<!-- MENU PREVIEW -->
-<div class="menu-preview">
-  <div class="menu-preview-text reveal">
-    <span class="section-label">Destaques do Cardápio</span>
-    <h2 class="section-title">Sabores que<br><em>marcam</em></h2>
-    <div class="divider"></div>
-    <div class="menu-preview-list">
-      <div class="menu-preview-item">
-        <div>
-          <div class="menu-name">Pastel de Camarão</div>
-          <div class="menu-tag">Entrada · Carro-chefe</div>
-        </div>
-        <span style="color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:1.1rem">★</span>
-      </div>
-      <div class="menu-preview-item">
-        <div>
-          <div class="menu-name">Tábua de Frutos do Mar</div>
-          <div class="menu-tag">Para Compartilhar</div>
-        </div>
-      </div>
-      <div class="menu-preview-item">
-        <div>
-          <div class="menu-name">Moqueca Carioca</div>
-          <div class="menu-tag">Prato Principal</div>
-        </div>
-      </div>
-      <div class="menu-preview-item">
-        <div>
-          <div class="menu-name">Camarão na Moranga</div>
-          <div class="menu-tag">Prato Principal</div>
-        </div>
-      </div>
-    </div>
-    <a href="cardapio.html" class="btn btn-outline" style="margin-top:2.5rem;width:fit-content">Cardápio Completo →</a>
-  </div>
-  <div class="menu-preview-img">
-    <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=900&q=85" alt="Prato de frutos do mar" style="width:100%;height:100%;object-fit:cover">
-  </div>
-</div>
+</main>
 
-<!-- RESERVA BANNER -->
-<div class="reserva-banner">
-  <div>
-    <h2>Reserve sua mesa<br>na <em style="color:rgba(251,247,239,0.75)">Ilha</em></h2>
-    <p style="margin-top:.8rem">Garanta um lugar à beira da lagoa. Atendemos de segunda a domingo, a partir das 11h.</p>
-  </div>
-  <a href="reservas.html" class="btn-ivory">Fazer Reserva</a>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="name">Salomé All Mare</div>
-      <div class="tagline">Ilha Primeira · Barra da Tijuca · Rio de Janeiro</div>
-      <p>Frutos do mar frescos em uma ilha particular, acessível apenas de barco. Uma experiência única no coração do Rio.</p>
-    </div>
-    <div class="footer-col">
-      <h5>Páginas</h5>
-      <a href="sobre.html">O Restaurante</a>
-      <a href="cardapio.html">Cardápio</a>
-      <a href="galeria.html">Galeria</a>
-      <a href="como-chegar.html">Como Chegar</a>
-      <a href="reservas.html">Reservas</a>
-    </div>
-    <div class="footer-col">
-      <h5>Informações</h5>
-      <a href="#">Seg–Dom · 11h às 21h</a>
-      <a href="#">Ilha Primeira, Gigoia</a>
-      <a href="#">Barra da Tijuca, RJ</a>
-      <a href="#">Acesso somente de barco</a>
-    </div>
-    <div class="footer-col">
-      <h5>Redes Sociais</h5>
-      <a href="https://www.instagram.com/salomealmare/" target="_blank">Instagram</a>
-      <a href="#">WhatsApp</a>
-      <a href="#">Google Maps</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Salomé All Mare. Todos os direitos reservados.</p>
-    <p class="credit">Design & Desenvolvimento por Web Studio</p>
-  </div>
-</footer>
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav">
+  <a href="index.html" class="nav-item active">
+    <span class="nav-icon">🏠</span>
+    <span class="nav-label">Início</span>
+  </a>
+  <a href="cardapio.html" class="nav-item">
+    <span class="nav-icon">🍽️</span>
+    <span class="nav-label">Cardápio</span>
+  </a>
+  <a href="galeria.html" class="nav-item">
+    <span class="nav-icon">📷</span>
+    <span class="nav-label">Galeria</span>
+  </a>
+  <a href="localizacao.html" class="nav-item">
+    <span class="nav-icon">📍</span>
+    <span class="nav-label">Local</span>
+  </a>
+  <a href="reservas.html" class="nav-item">
+    <span class="nav-icon">📅</span>
+    <span class="nav-label">Reservar</span>
+  </a>
+</nav>
 
 <script>
-const nav = document.getElementById('navbar');
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
-document.getElementById('heroBg').classList.add('loaded');
-const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.1 });
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>

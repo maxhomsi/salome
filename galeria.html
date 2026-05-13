@@ -2,181 +2,98 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#071420">
+<link rel="manifest" href="manifest.json">
 <title>Galeria — Salomé All Mare</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app.css">
 <style>
-.gallery-filter{display:flex;gap:0;border:.5px solid var(--border);width:fit-content;margin:2.5rem auto 0}
-.gf-btn{padding:.65rem 1.8rem;background:transparent;border:none;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);opacity:.5;cursor:pointer;transition:all .2s}
-.gf-btn.active{background:var(--coral);opacity:1}
-.masonry{columns:3;gap:4px;padding:4px;max-width:1300px;margin:3rem auto 0}
-.masonry-item{break-inside:avoid;margin-bottom:4px;position:relative;overflow:hidden;cursor:pointer}
-.masonry-item img{width:100%;display:block;transition:transform .5s}
-.masonry-item:hover img{transform:scale(1.04)}
-.masonry-item .caption{position:absolute;bottom:0;left:0;right:0;padding:1.2rem 1.4rem;background:linear-gradient(to top,rgba(7,20,32,.88),transparent);opacity:0;transform:translateY(6px);transition:all .35s;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sand)}
-.masonry-item:hover .caption{opacity:1;transform:none}
-.experience-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.exp-panel{position:relative;min-height:460px;overflow:hidden;cursor:pointer}
-.exp-panel img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
-.exp-panel:hover img{transform:scale(1.05)}
-.exp-panel-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,.9) 0%,rgba(7,20,32,.1) 60%);transition:background .4s}
-.exp-panel:hover .exp-panel-overlay{background:linear-gradient(to top,rgba(7,20,32,.95) 0%,rgba(7,20,32,.3) 60%)}
-.exp-panel-content{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 2rem}
-.exp-panel-num{font-family:'Cormorant Garamond',serif;font-size:4rem;color:var(--coral);font-weight:300;opacity:.3;line-height:1}
-.exp-panel-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--sand);font-weight:300;line-height:1.2}
-.exp-panel-text{font-size:.82rem;line-height:1.65;margin-top:.7rem;max-height:0;overflow:hidden;transition:max-height .4s}
-.exp-panel:hover .exp-panel-text{max-height:120px}
-@media(max-width:900px){.masonry{columns:2}.experience-strip{grid-template-columns:1fr}}
+.exp-card{position:relative;overflow:hidden;margin:0 1.4rem 12px;border:.5px solid var(--border)}
+.exp-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.6)}
+.exp-card-content{position:absolute;bottom:0;left:0;right:0;padding:1.4rem}
+.exp-card-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--coral);font-weight:300;opacity:.3;line-height:1}
+.exp-card-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--sand);font-weight:300;line-height:1.2}
+.exp-card-text{font-size:.8rem;line-height:1.65;color:var(--muted);margin-top:.4rem}
 </style>
 </head>
 <body>
-<nav class="solid">
-  <a href="index.html" class="nav-logo">Salomé All Mare <span>Ilha da Gigoia · Rio de Janeiro</span></a>
-  <ul class="nav-center">
-    <li><a href="sobre.html">O Restaurante</a></li>
-    <li><a href="cardapio.html">Cardápio</a></li>
-    <li><a href="galeria.html" class="active">Galeria</a></li>
-    <li><a href="como-chegar.html">Como Chegar</a></li>
-    <li><a href="contato.html">Contato</a></li>
-  </ul>
-  <a href="reservas.html" class="nav-cta">Reservar Mesa</a>
-</nav>
+<header class="app-header">
+  <a href="index.html" class="app-header-logo">Galeria <span>Salomé All Mare</span></a>
+  <a href="reservas.html" class="app-header-action">🍽️</a>
+</header>
 
-<div class="page-hero" style="min-height:55vh">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=1920&q=85');background-position:center 40%"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Início</a><span>/</span>Galeria</div>
-    <div class="eyebrow">Imagens & Atmosfera</div>
-    <h1>A Experiência<br><em>em Imagens</em></h1>
-    <p class="sub">A lagoa, a comida, o ambiente — o Salomé All Mare em cada detalhe.</p>
-  </div>
-  <div class="gallery-filter">
-    <button class="gf-btn active">Todos</button>
-    <button class="gf-btn">Ambiente</button>
-    <button class="gf-btn">Pratos</button>
-    <button class="gf-btn">Vista</button>
-  </div>
-</div>
-
-<!-- MASONRY GALLERY -->
-<section class="section dark" style="padding-top:0">
-  <div class="masonry">
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&w=600&q=80" alt="Ambiente interno">
-      <div class="caption">Ambiente interno</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=600&q=80" alt="Tábua de frutos do mar">
-      <div class="caption">Tábua de frutos do mar</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=600&q=80" alt="Vista da lagoa">
-      <div class="caption">Vista da lagoa</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&w=600&q=80" alt="Camarão grelhado">
-      <div class="caption">Camarão grelhado</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&w=600&q=80" alt="Salão do restaurante">
-      <div class="caption">Salão do restaurante</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=600&q=80" alt="Pôr do sol na ilha">
-      <div class="caption">Pôr do sol na ilha</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=600&q=80" alt="Prato do chef">
-      <div class="caption">Prato do chef</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&w=600&q=80" alt="Chegada de barco">
-      <div class="caption">Chegada de barco</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&w=600&q=80" alt="Cozinha aberta">
-      <div class="caption">Cozinha aberta</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&w=600&q=80" alt="Piscina na ilha">
-      <div class="caption">A ilha</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&w=600&q=80" alt="Frutos do mar">
-      <div class="caption">Frutos do mar frescos</div>
-    </div>
-    <div class="masonry-item reveal">
-      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&w=600&q=80" alt="Mesas ao ar livre">
-      <div class="caption">Mesas ao ar livre</div>
+<main class="page">
+  <div style="position:relative;height:200px;overflow:hidden">
+    <img src="https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=800&q=80" alt="Galeria" style="width:100%;height:100%;object-fit:cover;filter:brightness(.45)">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,1),rgba(7,20,32,.2) 60%);display:flex;align-items:flex-end;padding:1.5rem 1.4rem">
+      <div>
+        <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem">Imagens & Atmosfera</span>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--sand);line-height:.95">A Ilha em <em style="font-style:italic;color:var(--gold-light)">Fotos</em></h1>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- EXPERIENCE PANELS -->
-<section class="section ocean" style="padding:0">
-  <div style="padding:5rem 5vw 3rem;text-align:center" class="reveal">
+  <!-- MASONRY -->
+  <div class="gallery-grid" style="padding:4px 4px">
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&w=500&q=80" alt="Restaurante"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=500&q=80" alt="Frutos do mar"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&w=500&q=80" alt="Camarão"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=500&q=80" alt="Lagoa"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=500&q=80" alt="Prato"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&w=500&q=80" alt="Salão"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=500&q=80" alt="Pôr do sol"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&w=500&q=80" alt="Barco"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&w=500&q=80" alt="Cozinha"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&w=500&q=80" alt="Frutos do mar 2"></div>
+  </div>
+
+  <!-- EXPERIENCE CARDS -->
+  <div style="padding:1.8rem 1.4rem 0.5rem">
     <span class="section-label">Momentos Únicos</span>
     <h2 class="section-title">Três experiências<br>que você <em>não esquece</em></h2>
   </div>
-  <div class="experience-strip">
-    <div class="exp-panel reveal">
-      <img src="https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=700&q=80" alt="Chegada de barco">
-      <div class="exp-panel-overlay"></div>
-      <div class="exp-panel-content">
-        <div class="exp-panel-num">01</div>
-        <div class="exp-panel-title">A Chegada pela Lagoa</div>
-        <p class="exp-panel-text">A travessia de barco é parte da experiência. Você deixa o trânsito, o barulho e o cotidiano para trás — e chega de barco, com vento no rosto e lagoa ao redor.</p>
-      </div>
-    </div>
-    <div class="exp-panel reveal" style="transition-delay:.15s">
-      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=700&q=80" alt="A refeição">
-      <div class="exp-panel-overlay"></div>
-      <div class="exp-panel-content">
-        <div class="exp-panel-num">02</div>
-        <div class="exp-panel-title">A Refeição na Água</div>
-        <p class="exp-panel-text">Mesas à beira da lagoa, vento suave, frutos do mar fresquíssimos e uma vista que faz o tempo parar. Cada refeição aqui é uma memória afetiva do Rio.</p>
-      </div>
-    </div>
-    <div class="exp-panel reveal" style="transition-delay:.3s">
-      <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=700&q=80" alt="Pôr do sol">
-      <div class="exp-panel-overlay"></div>
-      <div class="exp-panel-content">
-        <div class="exp-panel-num">03</div>
-        <div class="exp-panel-title">O Pôr do Sol na Ilha</div>
-        <p class="exp-panel-text">Quando o sol começa a descer sobre a lagoa, o Salomé ganha uma luz dourada única. Vale ficar até o fim — e pedir mais uma caipirinha para a ocasião.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="name">Salomé All Mare</div>
-      <div class="tagline">Ilha Primeira · Barra da Tijuca · Rio de Janeiro</div>
-      <p>Frutos do mar frescos em uma ilha particular, acessível apenas de barco.</p>
-    </div>
-    <div class="footer-col"><h5>Páginas</h5>
-      <a href="sobre.html">O Restaurante</a><a href="cardapio.html">Cardápio</a>
-      <a href="galeria.html">Galeria</a><a href="como-chegar.html">Como Chegar</a>
-      <a href="reservas.html">Reservas</a>
-    </div>
-    <div class="footer-col"><h5>Informações</h5>
-      <a href="#">Seg–Dom · 11h às 21h</a>
-      <a href="#">Ilha Primeira, Gigoia</a><a href="#">Barra da Tijuca, RJ</a>
-    </div>
-    <div class="footer-col"><h5>Redes Sociais</h5>
-      <a href="https://www.instagram.com/salomealmare/" target="_blank">Instagram</a>
-      <a href="#">WhatsApp</a>
+  <div class="exp-card reveal" style="margin-top:1.2rem">
+    <img src="https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=800&q=80" alt="Chegada de barco">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,.92),transparent 55%)"></div>
+    <div class="exp-card-content">
+      <div class="exp-card-num">01</div>
+      <div class="exp-card-title">A Chegada pela Lagoa</div>
+      <p class="exp-card-text">A travessia de barco já é parte da experiência. Você chega com vento no rosto e a lagoa ao redor.</p>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2025 Salomé All Mare. Todos os direitos reservados.</p>
-    <p class="credit">Design & Desenvolvimento por Web Studio</p>
+
+  <div class="exp-card reveal">
+    <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=800&q=80" alt="Refeição">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,.92),transparent 55%)"></div>
+    <div class="exp-card-content">
+      <div class="exp-card-num">02</div>
+      <div class="exp-card-title">A Refeição na Água</div>
+      <p class="exp-card-text">Mesas à beira da lagoa, frutos do mar fresquíssimos e uma vista que faz o tempo parar.</p>
+    </div>
   </div>
-</footer>
+
+  <div class="exp-card reveal" style="margin-bottom:1.4rem">
+    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=800&q=80" alt="Pôr do sol">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,.92),transparent 55%)"></div>
+    <div class="exp-card-content">
+      <div class="exp-card-num">03</div>
+      <div class="exp-card-title">O Pôr do Sol na Ilha</div>
+      <p class="exp-card-text">Quando o sol desce sobre a lagoa, o Salomé ganha uma luz dourada única. Vale ficar até o fim.</p>
+    </div>
+  </div>
+</main>
+
+<nav class="bottom-nav">
+  <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span><span class="nav-label">Início</span></a>
+  <a href="cardapio.html" class="nav-item"><span class="nav-icon">🍽️</span><span class="nav-label">Cardápio</span></a>
+  <a href="galeria.html" class="nav-item active"><span class="nav-icon">📷</span><span class="nav-label">Galeria</span></a>
+  <a href="localizacao.html" class="nav-item"><span class="nav-icon">📍</span><span class="nav-label">Local</span></a>
+  <a href="reservas.html" class="nav-item"><span class="nav-icon">📅</span><span class="nav-label">Reservar</span></a>
+</nav>
 
 <script>
 const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.08 });

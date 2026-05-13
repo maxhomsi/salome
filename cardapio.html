@@ -2,363 +2,203 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#071420">
+<link rel="manifest" href="manifest.json">
 <title>Cardápio — Salomé All Mare</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-.cat-bar{background:var(--ocean);border-bottom:.5px solid var(--border);padding:0 5vw;display:flex;gap:0;overflow-x:auto;position:sticky;top:69px;z-index:98}
-.cat-btn{padding:1.1rem 1.8rem;background:transparent;border:none;font-family:'Jost',sans-serif;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);opacity:.5;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all .2s}
-.cat-btn:hover{opacity:.85}
-.cat-btn.active{opacity:1;border-bottom-color:var(--coral)}
-.menu-section{display:none}
-.menu-section.active{display:block}
-.menu-category-header{position:relative;height:300px;overflow:hidden;display:flex;align-items:flex-end;padding:3.5rem 5vw}
-.menu-category-header img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45)}
-.menu-category-header::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,.95),transparent 60%)}
-.menu-cat-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:300;color:var(--sand);position:relative;z-index:2}
-.dish-grid{padding:2px 5vw 3rem;max-width:1300px;margin:0 auto}
-.dish-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px}
-.dish-card{background:rgba(11,30,45,.5);border:.5px solid var(--border);display:grid;grid-template-columns:1fr 180px;transition:border-color .2s;min-height:160px}
-.dish-card:hover{border-color:rgba(192,90,58,.35)}
-.dish-card.featured{border-color:rgba(200,151,58,.3);grid-template-columns:1fr 220px}
-.dish-info{padding:2rem;display:flex;flex-direction:column;justify-content:space-between}
-.dish-badge{display:inline-block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:3px 10px;border:.5px solid;margin-bottom:.9rem;width:fit-content}
-.dish-badge.star{color:var(--gold-light);border-color:rgba(200,151,58,.4)}
-.dish-badge.new{color:var(--coral-light);border-color:rgba(192,90,58,.4)}
-.dish-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--sand);font-weight:400;line-height:1.25;margin-bottom:.6rem}
-.dish-desc{font-size:.82rem;line-height:1.65}
-.dish-serves{font-size:.68rem;letter-spacing:.12em;opacity:.45}
-.dish-photo{overflow:hidden;background:var(--ocean)}
-.dish-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
-.dish-card:hover .dish-photo img{transform:scale(1.05)}
-.drink-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:2px 5vw 4rem;max-width:1300px;margin:0 auto}
-.drink-card{background:rgba(11,30,45,.5);border:.5px solid var(--border);padding:2.5rem 2rem;transition:border-color .2s}
-.drink-card:hover{border-color:rgba(200,151,58,.3)}
-.drink-icon{font-size:2rem;margin-bottom:1rem}
-.drink-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--sand);margin-bottom:.5rem}
-.drink-desc{font-size:.82rem;line-height:1.6}
-@media(max-width:900px){
-  .dish-row{grid-template-columns:1fr}
-  .dish-card{grid-template-columns:1fr}
-  .dish-photo{height:200px}
-  .drink-grid{grid-template-columns:1fr 1fr}
-}
-</style>
+<link rel="stylesheet" href="app.css">
 </head>
 <body>
-<nav class="solid">
-  <a href="index.html" class="nav-logo">Salomé All Mare <span>Ilha da Gigoia · Rio de Janeiro</span></a>
-  <ul class="nav-center">
-    <li><a href="sobre.html">O Restaurante</a></li>
-    <li><a href="cardapio.html" class="active">Cardápio</a></li>
-    <li><a href="galeria.html">Galeria</a></li>
-    <li><a href="como-chegar.html">Como Chegar</a></li>
-    <li><a href="contato.html">Contato</a></li>
-  </ul>
-  <a href="reservas.html" class="nav-cta">Reservar Mesa</a>
+<header class="app-header">
+  <a href="index.html" class="app-header-logo">Cardápio <span>Salomé All Mare</span></a>
+  <a href="reservas.html" class="app-header-action">🍽️</a>
+</header>
+
+<main class="page">
+  <!-- PAGE HERO SMALL -->
+  <div style="position:relative;height:200px;overflow:hidden">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&w=800&q=80" alt="Cardápio" style="width:100%;height:100%;object-fit:cover;filter:brightness(.45)">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,1),rgba(7,20,32,.2) 60%);display:flex;align-items:flex-end;padding:1.5rem 1.4rem">
+      <div>
+        <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem">O que servimos</span>
+        <h1 style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--sand);line-height:.95">Nosso <em style="font-style:italic;color:var(--gold-light)">Cardápio</em></h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHIP FILTER -->
+  <div class="chip-strip" id="chipStrip">
+    <button class="chip active" onclick="filterMenu('entradas',this)">Entradas</button>
+    <button class="chip" onclick="filterMenu('pratos',this)">Pratos</button>
+    <button class="chip" onclick="filterMenu('petiscos',this)">Petiscos</button>
+    <button class="chip" onclick="filterMenu('bebidas',this)">Bebidas</button>
+    <button class="chip" onclick="filterMenu('sobremesas',this)">Sobremesas</button>
+  </div>
+
+  <!-- ENTRADAS -->
+  <div id="sec-entradas">
+    <div class="menu-item featured">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&w=200&q=80" alt="Pastel de Camarão"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-badge">★ Carro-chefe</div>
+        <div class="menu-item-name">Pastel de Camarão</div>
+        <p class="menu-item-desc">Massa crocante recheada com camarões frescos. Acompanha molho especial da casa.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1585325701954-6cc0be8ece39?auto=format&w=200&q=80" alt="Bolinho de Camarão"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-badge">Popular</div>
+        <div class="menu-item-name">Bolinho de Camarão</div>
+        <p class="menu-item-desc">Crocante por fora, macio por dentro. Vem com aioli de limão siciliano. 6 unidades.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&w=200&q=80" alt="Polvo Grelhado"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Polvo Grelhado</div>
+        <p class="menu-item-desc">Polvo ao ponto certo com azeite, alho e ervas frescas. Servido com legumes da estação.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1532980193-c96cd6e562c6?auto=format&w=200&q=80" alt="Ceviche"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Ceviche Carioca</div>
+        <p class="menu-item-desc">Peixe fresco marinado em limão, coentro, cebola roxa e pimenta dedo-de-moça.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRATOS -->
+  <div id="sec-pratos" style="display:none">
+    <div class="menu-item featured">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=200&q=80" alt="Tábua de Frutos do Mar"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-badge">★ Para Compartilhar</div>
+        <div class="menu-item-name">Tábua de Frutos do Mar</div>
+        <p class="menu-item-desc">Camarão, mexilhão, polvo e peixe do dia. Farta e completa, serve 2 pessoas.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&w=200&q=80" alt="Camarão na Moranga"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-badge">Favorito</div>
+        <div class="menu-item-name">Camarão na Moranga</div>
+        <p class="menu-item-desc">Camarões em molho cremoso servidos dentro de moranga assada. Serve 2 pessoas.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&w=200&q=80" alt="Moqueca"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Moqueca Carioca</div>
+        <p class="menu-item-desc">Camarão e peixe em caldo de tomate e leite de coco. Acompanha arroz, farofa e pirão.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&w=200&q=80" alt="Peixe Grelhado"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Peixe do Dia Grelhado</div>
+        <p class="menu-item-desc">O melhor peixe fresco do dia, grelhado no azeite com ervas. Acompanha arroz e legumes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PETISCOS -->
+  <div id="sec-petiscos" style="display:none">
+    <div class="menu-item featured">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&w=200&q=80" alt="Camarão Crocante"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-badge">★ Imperdível</div>
+        <div class="menu-item-name">Camarão Crocante</div>
+        <p class="menu-item-desc">Empanados em panko com especiarias. Servidos com maionese de sriracha.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&w=200&q=80" alt="Mix Frutos do Mar"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Mix de Frutos do Mar</div>
+        <p class="menu-item-desc">Camarões, lulas e polvo salteados no azeite com alho, tomate e manjericão.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEBIDAS -->
+  <div id="sec-bebidas" style="display:none">
+    <div class="menu-item featured">
+      <div class="menu-item-photo" style="display:flex;align-items:center;justify-content:center;background:var(--ocean);font-size:2.5rem">🍋</div>
+      <div class="menu-item-info">
+        <div class="menu-item-badge">★ Sugestão</div>
+        <div class="menu-item-name">Caipirinha da Casa</div>
+        <p class="menu-item-desc">Cachaça artesanal, limão fresquinho e toque de gengibre. O clássico carioca.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo" style="display:flex;align-items:center;justify-content:center;background:var(--ocean);font-size:2.5rem">🍹</div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Batida de Coco</div>
+        <p class="menu-item-desc">Coco fresco, cachaça, leite condensado e gelo. Um clássico carioca.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo" style="display:flex;align-items:center;justify-content:center;background:var(--ocean);font-size:2.5rem">🍺</div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Chopp Gelado</div>
+        <p class="menu-item-desc">Tirado na temperatura certa, em copo alto bem gelado.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo" style="display:flex;align-items:center;justify-content:center;background:var(--ocean);font-size:2.5rem">🥭</div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Suco Tropical</div>
+        <p class="menu-item-desc">Manga, maracujá, caju ou acerola. Sempre fresquinho, com ou sem açúcar.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOBREMESAS -->
+  <div id="sec-sobremesas" style="display:none">
+    <div class="menu-item featured">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&w=200&q=80" alt="Pudim"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-badge">★ Favorita</div>
+        <div class="menu-item-name">Pudim de Leite da Ilha</div>
+        <p class="menu-item-desc">Receita caseira cremosa com calda de caramelo escuro. Servido gelado.</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-item-photo"><img src="https://images.unsplash.com/photo-1501746877-14782df58970?auto=format&w=200&q=80" alt="Açaí"></div>
+      <div class="menu-item-info">
+        <div class="menu-item-name">Açaí com Granola</div>
+        <p class="menu-item-desc">Açaí batido cremoso com granola crocante, banana e mel. Um clássico carioca.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:1.4rem">
+    <a href="reservas.html" class="btn btn-primary btn-full">Reservar Mesa →</a>
+  </div>
+</main>
+
+<nav class="bottom-nav">
+  <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span><span class="nav-label">Início</span></a>
+  <a href="cardapio.html" class="nav-item active"><span class="nav-icon">🍽️</span><span class="nav-label">Cardápio</span></a>
+  <a href="galeria.html" class="nav-item"><span class="nav-icon">📷</span><span class="nav-label">Galeria</span></a>
+  <a href="localizacao.html" class="nav-item"><span class="nav-icon">📍</span><span class="nav-label">Local</span></a>
+  <a href="reservas.html" class="nav-item"><span class="nav-icon">📅</span><span class="nav-label">Reservar</span></a>
 </nav>
 
-<div class="page-hero" style="min-height:50vh">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&w=1920&q=85');background-position:center 70%"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Início</a><span>/</span>Cardápio</div>
-    <div class="eyebrow">O que servimos</div>
-    <h1>Nosso<br><em>Cardápio</em></h1>
-    <p class="sub">Frutos do mar frescos, entradas generosas e bebidas refrescantes para uma tarde perfeita na lagoa.</p>
-  </div>
-</div>
-
-<!-- CATEGORY BAR -->
-<div class="cat-bar">
-  <button class="cat-btn active" onclick="showCat('entradas',this)">Entradas</button>
-  <button class="cat-btn" onclick="showCat('pratos',this)">Pratos Principais</button>
-  <button class="cat-btn" onclick="showCat('petiscos',this)">Petiscos</button>
-  <button class="cat-btn" onclick="showCat('bebidas',this)">Bebidas</button>
-  <button class="cat-btn" onclick="showCat('sobremesas',this)">Sobremesas</button>
-</div>
-
-<!-- ENTRADAS -->
-<div class="menu-section active" id="sec-entradas">
-  <div class="menu-category-header">
-    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=1920&q=80" alt="Entradas">
-    <h2 class="menu-cat-title">Entradas<br><em>da Casa</em></h2>
-  </div>
-  <div class="dish-grid">
-    <div class="dish-row">
-      <div class="dish-card featured">
-        <div class="dish-info">
-          <div>
-            <span class="dish-badge star">★ Carro-chefe</span>
-            <div class="dish-name">Pastel de Camarão</div>
-            <p class="dish-desc">Massa crocante e dourada, recheada generosamente com camarões frescos temperados. Acompanha molho especial da casa e pimenta biquinho. Apontado como um dos melhores de toda a Ilha.</p>
-          </div>
-          <div class="dish-serves">Porção individual</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&w=400&q=80" alt="Pastel de Camarão">
-        </div>
-      </div>
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <span class="dish-badge new">Popular</span>
-            <div class="dish-name">Bolinho de Camarão</div>
-            <p class="dish-desc">Fritura leve e dourada com camarão desfiado e um toque de tempero carioca. Crocante por fora, macio por dentro. Vem com aioli de limão siciliano.</p>
-          </div>
-          <div class="dish-serves">6 unidades</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1585325701954-6cc0be8ece39?auto=format&w=400&q=80" alt="Bolinho de Camarão">
-        </div>
-      </div>
-    </div>
-    <div class="dish-row">
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <div class="dish-name">Polvo Grelhado</div>
-            <p class="dish-desc">Polvo ao ponto certo, grelhado com azeite, alho e ervas frescas. Macio por dentro, levemente crocante por fora. Servido com legumes da estação.</p>
-          </div>
-          <div class="dish-serves">Porção individual</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&w=400&q=80" alt="Polvo Grelhado">
-        </div>
-      </div>
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <div class="dish-name">Ceviche Carioca</div>
-            <p class="dish-desc">Peixe branco fresco marinado em limão, com coentro, cebola roxa e pimenta dedo-de-moça. Uma entrada refrescante com um toque tropical.</p>
-          </div>
-          <div class="dish-serves">Porção individual</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1532980193-c96cd6e562c6?auto=format&w=400&q=80" alt="Ceviche">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PRATOS PRINCIPAIS -->
-<div class="menu-section" id="sec-pratos">
-  <div class="menu-category-header">
-    <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=1920&q=80" alt="Pratos Principais">
-    <h2 class="menu-cat-title">Pratos<br><em>Principais</em></h2>
-  </div>
-  <div class="dish-grid">
-    <div class="dish-row">
-      <div class="dish-card featured">
-        <div class="dish-info">
-          <div>
-            <span class="dish-badge star">★ Para Compartilhar</span>
-            <div class="dish-name">Tábua de Frutos do Mar</div>
-            <p class="dish-desc">A tábua mais famosa da Ilha. Camarão, mexilhão, polvo grelhado e peixe do dia. Farta e completa, ideal para dois ou mais. Acompanha arroz, farofa e vinagrete.</p>
-          </div>
-          <div class="dish-serves">Serve 2 pessoas</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=400&q=80" alt="Tábua de Frutos do Mar">
-        </div>
-      </div>
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <span class="dish-badge new">Favorito</span>
-            <div class="dish-name">Camarão na Moranga</div>
-            <p class="dish-desc">Camarões salteados em molho cremoso com creme de leite e temperos, servidos dentro de uma moranga assada. Apresentação e sabor imperdíveis.</p>
-          </div>
-          <div class="dish-serves">Serve 2 pessoas</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&w=400&q=80" alt="Camarão na Moranga">
-        </div>
-      </div>
-    </div>
-    <div class="dish-row">
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <div class="dish-name">Moqueca Carioca</div>
-            <p class="dish-desc">Camarão e peixe cozinhados em caldo levemente adocicado de tomate, pimentão e leite de coco. Servida em panela de barro com arroz, farofa e pirão.</p>
-          </div>
-          <div class="dish-serves">Serve 2 pessoas</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&w=400&q=80" alt="Moqueca">
-        </div>
-      </div>
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <div class="dish-name">Peixe do Dia Grelhado</div>
-            <p class="dish-desc">O melhor peixe fresco que o mar oferece naquele dia, grelhado no azeite com ervas. Acompanha arroz, legumes salteados e molho de manteiga de ervas.</p>
-          </div>
-          <div class="dish-serves">Porção individual</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&w=400&q=80" alt="Peixe Grelhado">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PETISCOS -->
-<div class="menu-section" id="sec-petiscos">
-  <div class="menu-category-header">
-    <img src="https://images.unsplash.com/photo-1527976746453-f363eac4d889?auto=format&w=1920&q=80" alt="Petiscos">
-    <h2 class="menu-cat-title">Petiscos<br><em>da Ilha</em></h2>
-  </div>
-  <div class="dish-grid">
-    <div class="dish-row">
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <span class="dish-badge star">★ Imperdível</span>
-            <div class="dish-name">Camarão Crocante</div>
-            <p class="dish-desc">Camarões empanados em farinha panko com especiarias, fritos na temperatura certa. Crocantes e saborosos, servidos com maionese de sriracha.</p>
-          </div>
-          <div class="dish-serves">Porção para 2</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&w=400&q=80" alt="Camarão Crocante">
-        </div>
-      </div>
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <div class="dish-name">Mix de Frutos do Mar</div>
-            <p class="dish-desc">Uma mistura generosa de camarões, lulas e tentáculos de polvo salteados no azeite com alho, tomate e manjericão. Perfeito para compartilhar.</p>
-          </div>
-          <div class="dish-serves">Porção para 2–3</div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&w=400&q=80" alt="Mix de Frutos do Mar">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- BEBIDAS -->
-<div class="menu-section" id="sec-bebidas">
-  <div class="menu-category-header">
-    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&w=1920&q=80" alt="Bebidas">
-    <h2 class="menu-cat-title">Bebidas<br><em>& Coquetéis</em></h2>
-  </div>
-  <div class="drink-grid" style="padding-top:2rem">
-    <div class="drink-card reveal">
-      <div class="drink-icon">🍋</div>
-      <div class="drink-name">Caipirinha da Casa</div>
-      <p class="drink-desc">Cachaça artesanal, limão tahiti fresquinho, um toque de gengibre e açúcar cristal. O jeito certo de começar uma tarde na lagoa.</p>
-    </div>
-    <div class="drink-card reveal" style="transition-delay:.1s">
-      <div class="drink-icon">🍹</div>
-      <div class="drink-name">Batida de Coco</div>
-      <p class="drink-desc">Coco fresco, cachaça, leite condensado e gelo. Um clássico carioca servido na temperatura ideal.</p>
-    </div>
-    <div class="drink-card reveal" style="transition-delay:.2s">
-      <div class="drink-icon">🍺</div>
-      <div class="drink-name">Chopp Gelado</div>
-      <p class="drink-desc">Tirado na temperatura certa, em copo alto bem gelado. Acompanhamento obrigatório para um dia de frutos do mar.</p>
-    </div>
-    <div class="drink-card reveal" style="transition-delay:.3s">
-      <div class="drink-icon">🥭</div>
-      <div class="drink-name">Suco Tropical</div>
-      <p class="drink-desc">Manga, maracujá, caju ou acerola. Sucos naturais de frutas brasileiras fresquinhos servidos com ou sem açúcar.</p>
-    </div>
-    <div class="drink-card reveal" style="transition-delay:.4s">
-      <div class="drink-icon">🧊</div>
-      <div class="drink-name">Água de Coco</div>
-      <p class="drink-desc">Água de coco natural servida no coco ou gelada, gelada como deve ser num dia ensolarado na ilha.</p>
-    </div>
-    <div class="drink-card reveal" style="transition-delay:.5s">
-      <div class="drink-icon">🍷</div>
-      <div class="drink-name">Vinho Branco</div>
-      <p class="drink-desc">Seleção de brancos nacionais e importados, escolhidos para harmonizar perfeitamente com os frutos do mar da casa.</p>
-    </div>
-  </div>
-</div>
-
-<!-- SOBREMESAS -->
-<div class="menu-section" id="sec-sobremesas">
-  <div class="menu-category-header">
-    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&w=1920&q=80" alt="Sobremesas">
-    <h2 class="menu-cat-title">Doces<br><em>da Casa</em></h2>
-  </div>
-  <div class="dish-grid">
-    <div class="dish-row">
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <span class="dish-badge star">★ Favorita</span>
-            <div class="dish-name">Pudim de Leite da Ilha</div>
-            <p class="dish-desc">Receita caseira de pudim cremoso com calda de caramelo escuro. Servido gelado, no ponto perfeito.</p>
-          </div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&w=400&q=80" alt="Pudim">
-        </div>
-      </div>
-      <div class="dish-card">
-        <div class="dish-info">
-          <div>
-            <div class="dish-name">Açaí com Granola</div>
-            <p class="dish-desc">Tigela de açaí batido cremoso, com granola crocante, banana e mel. Um clássico carioca para encerrar com estilo.</p>
-          </div>
-        </div>
-        <div class="dish-photo">
-          <img src="https://images.unsplash.com/photo-1501746877-14782df58970?auto=format&w=400&q=80" alt="Açaí">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="name">Salomé All Mare</div>
-      <div class="tagline">Ilha Primeira · Barra da Tijuca · Rio de Janeiro</div>
-      <p>Frutos do mar frescos em uma ilha particular, acessível apenas de barco.</p>
-    </div>
-    <div class="footer-col"><h5>Páginas</h5>
-      <a href="sobre.html">O Restaurante</a>
-      <a href="cardapio.html">Cardápio</a>
-      <a href="galeria.html">Galeria</a>
-      <a href="como-chegar.html">Como Chegar</a>
-      <a href="reservas.html">Reservas</a>
-    </div>
-    <div class="footer-col"><h5>Informações</h5>
-      <a href="#">Seg–Dom · 11h às 21h</a>
-      <a href="#">Ilha Primeira, Gigoia</a>
-      <a href="#">Barra da Tijuca, RJ</a>
-    </div>
-    <div class="footer-col"><h5>Redes Sociais</h5>
-      <a href="https://www.instagram.com/salomealmare/" target="_blank">Instagram</a>
-      <a href="#">WhatsApp</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Salomé All Mare. Todos os direitos reservados.</p>
-    <p class="credit">Design & Desenvolvimento por Web Studio</p>
-  </div>
-</footer>
-
 <script>
-function showCat(cat, btn) {
-  document.querySelectorAll('.menu-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('sec-' + cat).classList.add('active');
+function filterMenu(cat, btn) {
+  ['entradas','pratos','petiscos','bebidas','sobremesas'].forEach(c => {
+    document.getElementById('sec-'+c).style.display = c===cat ? '' : 'none';
+  });
+  document.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  window.scrollTo({top: document.querySelector('.chip-strip').offsetTop - 56, behavior:'smooth'});
 }
-const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
