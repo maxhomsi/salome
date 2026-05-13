@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservas — Salomé All Mare</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.reservas-layout{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:80vh}
+.reservas-left{position:relative;overflow:hidden}
+.reservas-left img{width:100%;height:100%;object-fit:cover;display:block}
+.reservas-left-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(7,20,32,.6) 0%,rgba(7,20,32,.1) 100%)}
+.reservas-left-content{position:absolute;bottom:0;left:0;right:0;padding:4rem;z-index:2}
+.reservas-right{background:var(--ocean);padding:5rem;display:flex;flex-direction:column;justify-content:center}
+
+/* FORM */
+.form-group{margin-bottom:1.6rem}
+.form-group label{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;background:rgba(11,30,45,.7);
+  border:.5px solid var(--border);
+  color:var(--sand);padding:.9rem 1.1rem;
+  font-family:'Jost',sans-serif;font-size:.9rem;
+  font-weight:300;outline:none;
+  transition:border-color .2s;
+  appearance:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:rgba(200,151,58,.5)}
+.form-group select option{background:#0B1E2D;color:var(--sand)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.form-check{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:1.5rem}
+.form-check input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:2px;cursor:pointer;accent-color:var(--coral)}
+.form-check label{font-size:.82rem;line-height:1.6;cursor:pointer}
+.btn-submit{width:100%;padding:1.1rem;background:var(--coral);color:var(--ivory);border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;transition:background .2s}
+.btn-submit:hover{background:var(--coral-light)}
+
+.contact-options{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:3rem}
+.contact-opt{background:rgba(11,30,45,.5);border:.5px solid var(--border);padding:2.5rem;text-align:center;text-decoration:none;color:var(--sand);transition:border-color .25s}
+.contact-opt:hover{border-color:var(--border-md)}
+.contact-opt .ico{font-size:2.2rem;margin-bottom:1rem}
+.contact-opt .cname{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--sand);margin-bottom:.4rem}
+.contact-opt .cdesc{font-size:.8rem;line-height:1.6}
+.success-msg{display:none;text-align:center;padding:3rem;background:rgba(200,151,58,.08);border:.5px solid rgba(200,151,58,.3)}
+.success-msg .icon{font-size:3rem;margin-bottom:1rem}
+.success-msg h3{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold-light);margin-bottom:.8rem}
+.success-msg p{font-size:.9rem;line-height:1.7}
+
+@media(max-width:900px){
+  .reservas-layout{grid-template-columns:1fr}
+  .reservas-left{min-height:300px}
+  .reservas-right{padding:3rem}
+  .form-row{grid-template-columns:1fr}
+  .contact-options{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="solid">
+  <a href="index.html" class="nav-logo">Salomé All Mare <span>Ilha da Gigoia · Rio de Janeiro</span></a>
+  <ul class="nav-center">
+    <li><a href="sobre.html">O Restaurante</a></li>
+    <li><a href="cardapio.html">Cardápio</a></li>
+    <li><a href="galeria.html">Galeria</a></li>
+    <li><a href="como-chegar.html">Como Chegar</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <a href="reservas.html" class="nav-cta" style="background:var(--coral)">Reservar Mesa</a>
+</nav>
+
+<div style="padding-top:69px">
+  <div class="reservas-layout">
+    <div class="reservas-left">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&w=900&q=85" alt="Mesa à beira da lagoa">
+      <div class="reservas-left-overlay"></div>
+      <div class="reservas-left-content">
+        <span class="section-label">Reserve</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--sand);line-height:1.05">Sua mesa<br>na <em>Ilha</em></h2>
+        <div class="divider" style="margin:1.5rem 0"></div>
+        <p style="font-size:.9rem;line-height:1.8;max-width:340px">Garantimos o melhor lugar para você. Mesas à beira da lagoa têm alta procura nos fins de semana — reserve com antecedência.</p>
+        <div style="margin-top:2.5rem;display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;gap:1rem;align-items:center"><span style="font-size:1.2rem">🕐</span><span style="font-size:.85rem;opacity:.7">Seg a Dom · 11h às 21h</span></div>
+          <div style="display:flex;gap:1rem;align-items:center"><span style="font-size:1.2rem">🚤</span><span style="font-size:.85rem;opacity:.7">Acesso de barco · Ilha Primeira</span></div>
+          <div style="display:flex;gap:1rem;align-items:center"><span style="font-size:1.2rem">📍</span><span style="font-size:.85rem;opacity:.7">Polo Gastronômico, Gigoia – RJ</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="reservas-right">
+      <div id="formWrap">
+        <span class="section-label">Formulário</span>
+        <h2 class="section-title" style="font-size:2rem">Fazer<br><em>Reserva</em></h2>
+        <div class="divider"></div>
+        <form id="reservaForm" onsubmit="submitForm(event)" style="margin-top:2rem">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome completo</label>
+              <input type="text" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label>Telefone / WhatsApp</label>
+              <input type="tel" placeholder="(21) 9 0000-0000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Data</label>
+              <input type="date" required>
+            </div>
+            <div class="form-group">
+              <label>Horário preferido</label>
+              <select>
+                <option>11h00</option><option>12h00</option>
+                <option>13h00</option><option>14h00</option>
+                <option>15h00</option><option>16h00</option>
+                <option>17h00</option><option>18h00</option>
+                <option>19h00</option><option>20h00</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Número de pessoas</label>
+            <select>
+              <option>1 pessoa</option><option>2 pessoas</option>
+              <option>3 pessoas</option><option>4 pessoas</option>
+              <option>5 pessoas</option><option>6 pessoas</option>
+              <option>7 ou mais pessoas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Observações</label>
+            <textarea placeholder="Aniversário, restrições alimentares, preferência de mesa à beira da lagoa..."></textarea>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="termos">
+            <label for="termos">Concordo em receber confirmação por WhatsApp e estou ciente de que reservas sem confirmação podem ser canceladas.</label>
+          </div>
+          <button type="submit" class="btn-submit">Enviar Solicitação de Reserva →</button>
+        </form>
+      </div>
+      <div class="success-msg" id="successMsg">
+        <div class="icon">🎉</div>
+        <h3>Reserva Enviada!</h3>
+        <p>Recebemos sua solicitação e entraremos em contato pelo WhatsApp em breve para confirmar sua mesa na lagoa. Até lá!</p>
+        <a href="index.html" class="btn btn-gold" style="display:inline-block;margin-top:2rem">Voltar ao Início</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ALTERNATIVE CONTACT -->
+<section class="section dark">
+  <div class="container-sm">
+    <div style="text-align:center;margin-bottom:3rem" class="reveal">
+      <span class="section-label">Outras formas de contato</span>
+      <h2 class="section-title">Prefere falar<br><em>diretamente?</em></h2>
+    </div>
+    <div class="contact-options">
+      <a href="https://wa.me/5521999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Salomé%20All%20Mare" class="contact-opt reveal" target="_blank">
+        <div class="ico">💬</div>
+        <div class="cname">WhatsApp</div>
+        <p class="cdesc">Forma mais rápida. Respondemos em até 30 minutos durante o horário de funcionamento.</p>
+        <div style="margin-top:1.5rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light)">(21) 9 ····-····</div>
+      </a>
+      <a href="https://www.instagram.com/salomealmare/" class="contact-opt reveal" style="transition-delay:.12s" target="_blank">
+        <div class="ico">📸</div>
+        <div class="cname">Instagram</div>
+        <p class="cdesc">Mande uma DM pelo Instagram. Também respondemos por lá e publicamos o cardápio do dia.</p>
+        <div style="margin-top:1.5rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light)">@salomealmare</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="name">Salomé All Mare</div>
+      <div class="tagline">Ilha Primeira · Barra da Tijuca · Rio de Janeiro</div>
+      <p>Frutos do mar frescos em uma ilha particular, acessível apenas de barco.</p>
+    </div>
+    <div class="footer-col"><h5>Páginas</h5>
+      <a href="sobre.html">O Restaurante</a><a href="cardapio.html">Cardápio</a>
+      <a href="galeria.html">Galeria</a><a href="como-chegar.html">Como Chegar</a>
+      <a href="reservas.html">Reservas</a>
+    </div>
+    <div class="footer-col"><h5>Informações</h5>
+      <a href="#">Seg–Dom · 11h às 21h</a>
+      <a href="#">Ilha Primeira, Gigoia</a><a href="#">Barra da Tijuca, RJ</a>
+    </div>
+    <div class="footer-col"><h5>Redes Sociais</h5>
+      <a href="https://www.instagram.com/salomealmare/" target="_blank">Instagram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Salomé All Mare. Todos os direitos reservados.</p>
+    <p class="credit">Design & Desenvolvimento por Web Studio</p>
+  </div>
+</footer>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('formWrap').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato — Salomé All Mare</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:70vh}
+.contact-left{background:var(--ocean);padding:5rem;display:flex;flex-direction:column;justify-content:center}
+.contact-right{padding:5rem;display:flex;flex-direction:column;justify-content:center}
+.contact-block{display:flex;gap:2rem;padding:2rem 0;border-bottom:.5px solid var(--border)}
+.contact-block:first-child{border-top:.5px solid var(--border)}
+.contact-block-icon{font-size:1.8rem;min-width:48px;text-align:center;opacity:.7}
+.contact-block-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--sand);margin-bottom:.4rem}
+.contact-block-text{font-size:.85rem;line-height:1.65}
+.contact-block-link{display:inline-block;margin-top:.6rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);text-decoration:none;transition:opacity .2s}
+.contact-block-link:hover{opacity:.7}
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(11,30,45,.5);border:.5px solid var(--border);color:var(--sand);padding:.85rem 1rem;font-family:'Jost',sans-serif;font-size:.9rem;font-weight:300;outline:none;transition:border-color .2s}
+.form-group input:focus,.form-group textarea:focus{border-color:rgba(200,151,58,.5)}
+.form-group textarea{min-height:130px;resize:vertical}
+.btn-send{background:var(--coral);color:var(--ivory);border:none;padding:1rem 2.5rem;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.btn-send:hover{background:var(--coral-light)}
+
+.social-links{display:flex;gap:1.5px;margin-top:3rem}
+.social-link{background:rgba(11,30,45,.5);border:.5px solid var(--border);padding:1.5rem 2rem;text-decoration:none;color:var(--sand);display:flex;align-items:center;gap:.8rem;transition:border-color .2s;flex:1;justify-content:center}
+.social-link:hover{border-color:var(--border-md)}
+.social-link .ico{font-size:1.3rem}
+.social-link .sname{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr}
+  .contact-left,.contact-right{padding:3rem}
+}
+</style>
+</head>
+<body>
+<nav class="solid">
+  <a href="index.html" class="nav-logo">Salomé All Mare <span>Ilha da Gigoia · Rio de Janeiro</span></a>
+  <ul class="nav-center">
+    <li><a href="sobre.html">O Restaurante</a></li>
+    <li><a href="cardapio.html">Cardápio</a></li>
+    <li><a href="galeria.html">Galeria</a></li>
+    <li><a href="como-chegar.html">Como Chegar</a></li>
+    <li><a href="contato.html" class="active">Contato</a></li>
+  </ul>
+  <a href="reservas.html" class="nav-cta">Reservar Mesa</a>
+</nav>
+
+<div class="page-hero" style="min-height:45vh">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&w=1920&q=85');background-position:center 65%"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Início</a><span>/</span>Contato</div>
+    <div class="eyebrow">Fale Conosco</div>
+    <h1>Entre em<br><em>Contato</em></h1>
+  </div>
+</div>
+
+<div class="contact-grid">
+  <div class="contact-left reveal">
+    <span class="section-label">Informações</span>
+    <h2 class="section-title">Estamos<br><em>à disposição</em></h2>
+    <div class="divider"></div>
+    <div style="margin-top:1.5rem">
+      <div class="contact-block">
+        <div class="contact-block-icon">📍</div>
+        <div>
+          <div class="contact-block-title">Localização</div>
+          <p class="contact-block-text">Ilha Primeira — Polo Gastronômico<br>Próxima à Ilha da Gigoia<br>Barra da Tijuca, Rio de Janeiro · RJ</p>
+          <a href="como-chegar.html" class="contact-block-link">Como Chegar →</a>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-icon">🕐</div>
+        <div>
+          <div class="contact-block-title">Horário de Funcionamento</div>
+          <p class="contact-block-text">Segunda a Sexta · 11h00 às 20h00<br>Sábado e Domingo · 10h00 às 21h00<br>Feriados · Consulte via WhatsApp</p>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-icon">💬</div>
+        <div>
+          <div class="contact-block-title">WhatsApp</div>
+          <p class="contact-block-text">A forma mais rápida de falar com a gente. Respondemos reservas, dúvidas e eventos.</p>
+          <a href="https://wa.me/5521999999999" class="contact-block-link" target="_blank">(21) 9 ····-···· →</a>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-icon">📸</div>
+        <div>
+          <div class="contact-block-title">Instagram</div>
+          <p class="contact-block-text">Acompanhe o cardápio do dia, fotos da ilha e novidades do restaurante no nosso perfil.</p>
+          <a href="https://www.instagram.com/salomealmare/" class="contact-block-link" target="_blank">@salomealmare →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right reveal" style="transition-delay:.15s;background:var(--deep)">
+    <span class="section-label">Mensagem</span>
+    <h2 class="section-title" style="font-size:2rem">Envie uma<br><em>mensagem</em></h2>
+    <div class="divider"></div>
+    <form style="margin-top:2rem" onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-size:1rem;color:var(--gold-light);text-align:center;padding:2rem\'>✓ Mensagem enviada! Retornaremos em breve.</p>'">
+      <div class="form-group">
+        <label>Seu nome</label>
+        <input type="text" placeholder="Nome completo" required>
+      </div>
+      <div class="form-group">
+        <label>E-mail ou WhatsApp</label>
+        <input type="text" placeholder="Contato para retorno" required>
+      </div>
+      <div class="form-group">
+        <label>Assunto</label>
+        <select>
+          <option>Reserva de mesa</option>
+          <option>Eventos e grupos</option>
+          <option>Informações gerais</option>
+          <option>Parceria / Imprensa</option>
+          <option>Outro assunto</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensagem</label>
+        <textarea placeholder="Como podemos ajudar?" required></textarea>
+      </div>
+      <button type="submit" class="btn-send">Enviar Mensagem →</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="name">Salomé All Mare</div>
+      <div class="tagline">Ilha Primeira · Barra da Tijuca · Rio de Janeiro</div>
+      <p>Frutos do mar frescos em uma ilha particular, acessível apenas de barco.</p>
+    </div>
+    <div class="footer-col"><h5>Páginas</h5>
+      <a href="sobre.html">O Restaurante</a><a href="cardapio.html">Cardápio</a>
+      <a href="galeria.html">Galeria</a><a href="como-chegar.html">Como Chegar</a>
+      <a href="reservas.html">Reservas</a>
+    </div>
+    <div class="footer-col"><h5>Informações</h5>
+      <a href="#">Seg–Dom · 11h às 21h</a>
+      <a href="#">Ilha Primeira, Gigoia</a><a href="#">Barra da Tijuca, RJ</a>
+    </div>
+    <div class="footer-col"><h5>Redes Sociais</h5>
+      <a href="https://www.instagram.com/salomealmare/" target="_blank">Instagram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Salomé All Mare. Todos os direitos reservados.</p>
+    <p class="credit">Design & Desenvolvimento por Web Studio</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

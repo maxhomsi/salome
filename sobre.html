@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Restaurante — Salomé All Mare</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.timeline { margin-top: 3.5rem; }
+.timeline-item {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 2rem; margin-bottom: 3rem; position: relative;
+}
+.timeline-item::before {
+  content: ''; position: absolute;
+  left: 39px; top: 44px; bottom: -3rem;
+  width: 0.5px; background: var(--border);
+}
+.timeline-item:last-child::before { display: none; }
+.timeline-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; color: var(--gold-light);
+  font-weight: 300; text-align: center;
+  padding-top: 2px;
+}
+.timeline-content h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; color: var(--sand); margin-bottom: .5rem;
+}
+.timeline-content p { font-size: .88rem; line-height: 1.7; }
+
+.team-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  margin-top: 3.5rem;
+}
+.team-card { background: rgba(11,30,45,0.5); border: 0.5px solid var(--border); }
+.team-photo { aspect-ratio: 1; overflow: hidden; }
+.team-photo img { width:100%; height:100%; object-fit:cover; display:block; transition: transform .5s; }
+.team-card:hover .team-photo img { transform: scale(1.04); }
+.team-info { padding: 1.5rem; }
+.team-name { font-family: 'Cormorant Garamond',serif; font-size:1.3rem; color:var(--sand); }
+.team-role { font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--gold); margin-top:.3rem; }
+.team-bio { font-size:.82rem; margin-top:.8rem; line-height:1.65; }
+
+.values-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+}
+.value-card {
+  background: var(--ocean); padding: 3rem 2.5rem;
+  border: 0.5px solid var(--border);
+  transition: border-color .25s;
+}
+.value-card:hover { border-color: var(--border-md); }
+.value-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+.value-title { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--sand); margin-bottom:.8rem; }
+.value-text { font-size:.88rem; line-height:1.7; }
+
+.about-split {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 0;
+}
+.about-photo { position:relative; min-height:540px; }
+.about-photo img { width:100%;height:100%;object-fit:cover; }
+.about-photo-caption {
+  position:absolute; bottom:2rem; right:-2rem;
+  background:var(--ocean); border:0.5px solid var(--border);
+  padding:1.2rem 1.8rem; z-index:2; max-width:220px;
+}
+.about-photo-caption .big { font-family:'Cormorant Garamond',serif; font-size:2.4rem; color:var(--gold-light); font-weight:300; line-height:1; }
+.about-photo-caption .small { font-size:.7rem; letter-spacing:.14em; opacity:.55; margin-top:.2rem; }
+.about-text-inner { padding: 5rem; display:flex; flex-direction:column; justify-content:center; }
+.about-text-inner p { font-size:1rem; line-height:1.9; margin-bottom:1.1rem; }
+.about-text-inner p strong { color:var(--gold-light); font-weight:400; }
+
+@media(max-width:900px){
+  .about-split { grid-template-columns:1fr; }
+  .team-grid { grid-template-columns:1fr; }
+  .values-grid { grid-template-columns:1fr; }
+  .about-text-inner { padding:3rem; }
+  .about-photo { min-height:320px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="solid">
+  <a href="index.html" class="nav-logo">Salomé All Mare <span>Ilha da Gigoia · Rio de Janeiro</span></a>
+  <ul class="nav-center">
+    <li><a href="sobre.html" class="active">O Restaurante</a></li>
+    <li><a href="cardapio.html">Cardápio</a></li>
+    <li><a href="galeria.html">Galeria</a></li>
+    <li><a href="como-chegar.html">Como Chegar</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <a href="reservas.html" class="nav-cta">Reservar Mesa</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="min-height:60vh">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&w=1920&q=85');background-position:center 60%"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Início</a><span>/</span>O Restaurante</div>
+    <div class="eyebrow">Nossa História</div>
+    <h1>O Restaurante<br><em>Salomé All Mare</em></h1>
+    <p class="sub">Uma história de amor pelo mar, pela comida e pela Ilha Primeira — contada um prato de cada vez.</p>
+  </div>
+</div>
+
+<!-- ABOUT SPLIT -->
+<div class="about-split">
+  <div class="about-photo reveal">
+    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&w=900&q=85" alt="Cozinha do restaurante">
+    <div class="about-photo-caption">
+      <div class="big">★ 4.8</div>
+      <div class="small">Avaliação média<br>dos clientes</div>
+    </div>
+  </div>
+  <div class="about-text-inner reveal" style="background:var(--ocean);transition-delay:.15s">
+    <span class="section-label">Sobre Nós</span>
+    <h2 class="section-title">Nascidos<br>na <em>Ilha</em></h2>
+    <div class="divider"></div>
+    <p>O Salomé All Mare nasceu do encontro entre a tradição carioca dos frutos do mar e a magia única de viver em uma ilha. Fundado há mais de uma década, o restaurante é hoje um dos mais queridos do <strong>polo gastronômico da Ilha Primeira</strong>, na Barra da Tijuca.</p>
+    <p>Nossa filosofia é simples: <strong>ingredientes frescos, ambiente acolhedor e um atendimento que faz você voltar</strong>. Cada prato é preparado com o cuidado que o mar exige — e com o carinho que o Rio de Janeiro merece.</p>
+    <p>Somos mais do que um restaurante. Somos um destino.</p>
+  </div>
+</div>
+
+<!-- VALUES -->
+<section class="section dark">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto 4rem" class="reveal">
+      <span class="section-label">Nossos Valores</span>
+      <h2 class="section-title">O que nos<br><em>define</em></h2>
+    </div>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="value-icon">🌊</div>
+      <div class="value-title">Frescor do Mar</div>
+      <p class="value-text">Nossos ingredientes são selecionados diariamente. Frutos do mar frescos não são um diferencial — são uma obrigação.</p>
+    </div>
+    <div class="value-card reveal" style="transition-delay:.12s">
+      <div class="value-icon">🤝</div>
+      <div class="value-title">Hospitalidade Carioca</div>
+      <p class="value-text">Atendemos cada mesa como se fosse um amigo chegando em casa. A hospitalidade do Rio está em tudo que fazemos.</p>
+    </div>
+    <div class="value-card reveal" style="transition-delay:.24s">
+      <div class="value-icon">🏝️</div>
+      <div class="value-title">Experiência Única</div>
+      <p class="value-text">Uma ilha acessível apenas de barco, com vista privilegiada e uma brisa que só a lagoa proporciona. Aqui, cada visita é uma fuga do cotidiano.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section ocean">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
+    <div class="reveal">
+      <span class="section-label">Nossa Trajetória</span>
+      <h2 class="section-title">Uma história<br><em>de sabor</em></h2>
+      <div class="divider"></div>
+      <p style="font-size:1rem;line-height:1.85">De um projeto simples à beira da lagoa, o Salomé All Mare se tornou referência no polo gastronômico mais charmoso do Rio de Janeiro.</p>
+    </div>
+    <div class="timeline reveal" style="transition-delay:.15s">
+      <div class="timeline-item">
+        <div class="timeline-year">2012</div>
+        <div class="timeline-content">
+          <h4>A Fundação</h4>
+          <p>O Salomé abre as portas com um menu enxuto e mesas simples à beira da lagoa. O pastel de camarão já conquista os primeiros visitantes.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2015</div>
+        <div class="timeline-content">
+          <h4>Reconhecimento da Ilha</h4>
+          <p>O restaurante se consolida como ponto de referência no polo gastronômico da Ilha Primeira, com avaliações crescentes.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2019</div>
+        <div class="timeline-content">
+          <h4>Expansão do Cardápio</h4>
+          <p>As tábuas de frutos do mar fartas chegam ao menu e rapidamente se tornam o prato mais pedido da casa.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Hoje</div>
+        <div class="timeline-content">
+          <h4>Um Destino Gastronômico</h4>
+          <p>O Salomé All Mare atende centenas de visitantes por semana, preservando o sabor caseiro e o acolhimento que o tornaram famoso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section dark" style="text-align:center">
+  <div class="container-xs reveal">
+    <span class="section-label">Venha nos Visitar</span>
+    <h2 class="section-title">Conheça a nossa<br><em>história de perto</em></h2>
+    <div class="divider" style="margin:1.8rem auto"></div>
+    <p style="font-size:1rem;line-height:1.85;margin-bottom:2.5rem">Reserve sua mesa e venha fazer parte dessa história. A lagoa, a brisa e os frutos do mar esperam por você.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="reservas.html" class="btn btn-primary">Fazer Reserva</a>
+      <a href="cardapio.html" class="btn btn-outline">Ver Cardápio</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="name">Salomé All Mare</div>
+      <div class="tagline">Ilha Primeira · Barra da Tijuca · Rio de Janeiro</div>
+      <p>Frutos do mar frescos em uma ilha particular, acessível apenas de barco. Uma experiência única no coração do Rio.</p>
+    </div>
+    <div class="footer-col"><h5>Páginas</h5>
+      <a href="sobre.html">O Restaurante</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="como-chegar.html">Como Chegar</a>
+      <a href="reservas.html">Reservas</a>
+    </div>
+    <div class="footer-col"><h5>Informações</h5>
+      <a href="#">Seg–Dom · 11h às 21h</a>
+      <a href="#">Ilha Primeira, Gigoia</a>
+      <a href="#">Barra da Tijuca, RJ</a>
+    </div>
+    <div class="footer-col"><h5>Redes Sociais</h5>
+      <a href="https://www.instagram.com/salomealmare/" target="_blank">Instagram</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Salomé All Mare. Todos os direitos reservados.</p>
+    <p class="credit">Design & Desenvolvimento por Web Studio</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
