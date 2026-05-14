@@ -110,7 +110,7 @@ body { padding-bottom: calc(var(--nav-h) + var(--safe-b)); }
 }
 .hero-inner { position: relative; z-index: 2; max-width: var(--cx); margin: 0 auto; width: 100%; }
 .hero-tag {
-  font-size: .72rem; letter-spacing: 0.28em; text-transform: uppercase;
+  font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
   color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 10px; margin-bottom: 0.9rem;
 }
 .hero-tag::before { content:''; width:20px; height:0.5px; background:currentColor; }
@@ -326,17 +326,29 @@ body { padding-bottom: calc(var(--nav-h) + var(--safe-b)); }
 
 /* ══ MOBILE OVERRIDES (<640px) ══════════════ */
 @media (max-width: 639px) {
-  .feat-row { grid-template-columns:1fr 1fr; }
-  .feat-cell { padding: 1.4rem 1.2rem; column-gap: 1rem; }
-  .feat-icon { font-size: 2rem; }
-  .feat-name { font-size: 1rem; }
-  .feat-desc { font-size: 0.82rem; }
+  /* Header: more vertical padding so logo doesn't touch edges */
+  .app-header { padding-top: calc(env(safe-area-inset-top, 0px) + 6px); padding-bottom: 6px; height: auto; min-height: var(--hh); }
+  /* Logo name: no line break, smaller to fit */
+  .logo-name { font-size: 1.25rem; white-space: nowrap; }
+  .logo-sub { font-size: 0.55rem; white-space: nowrap; }
+  .logo-img { width: 72px; height: 72px; }
+  /* Hero: shorter on mobile, less empty space */
+  .hero { height: auto; min-height: 0; padding: 2rem 1.2rem 1.6rem; justify-content: flex-end; }
+  .hero-bg { position: absolute; inset: 0; height: 100%; }
+  .hero h1 { font-size: clamp(3rem, 14vw, 4.5rem); }
+  .hero-sub { margin-bottom: 1.2rem; font-size: 0.92rem; }
+  /* Buttons: side by side, full width */
+  .hero-btns { flex-direction: row; flex-wrap: nowrap; gap: 0.6rem; }
+  .hero-btns .btn { flex: 1; padding: 0.85rem 0.5rem; font-size: 0.75rem; }
+  /* Feature strip: 2 cols, closer to hero */
+  .feat-row { grid-template-columns: 1fr 1fr; }
+  .feat-cell { padding: 1.2rem 1rem; column-gap: 0.8rem; }
+  .feat-icon { font-size: 1.8rem; }
+  .feat-name { font-size: 0.9rem; }
+  .feat-desc { font-size: 0.75rem; }
   .hscroll-wrap { overflow-x:auto; scrollbar-width:none; }
   .hscroll-wrap::-webkit-scrollbar { display:none; }
-  .hscroll {
-    display:flex; gap:8px; padding:0 1.2rem 1.4rem;
-    scroll-snap-type:x mandatory;
-  }
+  .hscroll { display:flex; gap:8px; padding:0 1.2rem 1.4rem; scroll-snap-type:x mandatory; }
   .hcard { flex-shrink:0; width:48vw; scroll-snap-align:start; }
   .split { grid-template-columns:1fr; }
   .split-photo { min-height:220px; }
@@ -361,8 +373,6 @@ body { padding-bottom: calc(var(--nav-h) + var(--safe-b)); }
   .logo-block { gap:1rem; }
   .logo-block img { width:64px; height:64px; }
   .lbn { font-size:1.4rem; }
-  .hero { padding:1.8rem 1.2rem 2rem; }
-  .hero h1 { font-size:clamp(3.2rem,15vw,5rem); }
   body { padding-bottom:calc(var(--nav-h) + var(--safe-b)); }
 }
 
@@ -383,8 +393,8 @@ body { padding-bottom: calc(var(--nav-h) + var(--safe-b)); }
   }
   .nav-links a:hover { opacity:1; background:rgba(245,241,234,0.06); }
   .nav-links a.on { opacity:1; color:var(--gold-lt); border-bottom-color:var(--gold-lt); }
-  /* Wider header */
-  .app-header { padding:0 2.5rem; }
+  /* Wider header with more breathing room for logo */
+  .app-header { padding: 6px 2.5rem; }
   .logo-img { width:95px; height:95px; }
   .logo-name { font-size:1.6rem; }
   /* Content max-width */
