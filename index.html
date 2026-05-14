@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Salomé">
-<meta name="theme-color" content="#111009">
+<meta name="theme-color" content="#0A0A09">
 <link rel="manifest" href="manifest.json">
-<title>Salomé All Mare — Ilha da Gigoia</title>
+<title>Salomé Al Mare — Ilha Primeira </title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
 
 <header class="app-header">
-  <a href="index.html" class="header-logo-wrap">
-    <img src="imagens/logo.png" alt="Salomé Al Mare Logo" class="header-logo-img">
-    <div class="header-logo-text">
-      <span class="name">Salomé Al Mare</span>
-      <span class="sub">Ilha da Gigoia · Rio de Janeiro</span>
-    </div>
+  <a href="index.html" class="logo-link">
+    <img src="imagens/logo.png" alt="Salomé Al Mare" class="logo-img">
+    <div class="logo-text"><span class="logo-name">Salomé Al Mare</span><span class="logo-sub">Ilha Primeira · Rio de Janeiro</span></div>
   </a>
-  <a href="reservas.html" class="header-btn">📅 Reservar</a>
+  <ul class="nav-links">
+    <li><a href="sobre.html">O Restaurante</a></li>
+    <li><a href="cardapio.html">Cardápio</a></li>
+    <li><a href="galeria.html">Galeria</a></li>
+    <li><a href="localizacao.html">Como Chegar</a></li>
+  </ul>
+  <a href="reservas.html" class="btn-res">Reservar</a>
 </header>
 
 <main class="page">
@@ -30,126 +31,74 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-bg" style="background-image:url('imagens/lagoa.jpeg');background-position:center 30%"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-tag">Ilha Primeira · Barra da Tijuca</div>
+    <div class="hero-ov"></div>
+    <div class="hero-inner">
+      <div class="hero-tag">Ilha Primeira · Barra da Tijuca </div>
       <h1>Salomé<br><em>Al Mare</em></h1>
       <p class="hero-sub">Frutos do mar frescos à beira da lagoa, em uma ilha que só se chega de barco.</p>
-      <div class="hero-actions">
+      <div class="hero-btns">
         <a href="cardapio.html" class="btn btn-primary">Ver Cardápio</a>
-        <a href="reservas.html" class="btn btn-outline">Reservar</a>
+        <a href="reservas.html" class="btn btn-ghost">Reservar Mesa</a>
       </div>
     </div>
   </div>
 
-  <div class="gold-line"></div>
-
   <!-- FEATURES -->
-  <div class="feat-grid reveal">
-    <div class="feat-card">
-      <div class="feat-icon">🦐</div>
-      <div class="feat-title">Frutos do Mar Frescos</div>
-      <div class="feat-desc">Seleção diária do melhor do mar</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🌅</div>
-      <div class="feat-title">Vista da Lagoa</div>
-      <div class="feat-desc">Mesas à beira d'água</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">⚓</div>
-      <div class="feat-title">Acesso de Barco</div>
-      <div class="feat-desc">Ilha exclusiva na Barra</div>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon">🥐</div>
-      <div class="feat-title">Melhor Pastel</div>
-      <div class="feat-desc">Pastel de camarão da casa</div>
-    </div>
+  <div class="feat-row rv">
+    <div class="feat-cell"><span class="feat-icon">🦐</span><div class="feat-name">Frutos do Mar</div><div class="feat-desc">Seleção diária do melhor do mar</div></div>
+    <div class="feat-cell"><span class="feat-icon">🌅</span><div class="feat-name">Vista da Lagoa</div><div class="feat-desc">Mesas à beira d'água</div></div>
+    <div class="feat-cell"><span class="feat-icon">⚓</span><div class="feat-name">Acesso de Barco</div><div class="feat-desc">Ilha exclusiva na Barra</div></div>
+    <div class="feat-cell"><span class="feat-icon">🥐</span><div class="feat-name">Melhor Pastel</div><div class="feat-desc">O pastel de camarão da casa</div></div>
   </div>
 
   <!-- DESTAQUES -->
-  <div class="sec-header reveal">
-    <span class="section-label">Destaques</span>
-    <h2 class="section-title">Não perca <em>estes</em></h2>
-  </div>
-  <div class="hscroll">
-    <div class="hcard">
-      <img src="imagens/pastel.jpg" alt="Pastel de Camarão">
-      <div class="hcard-overlay"></div>
-      <div class="hcard-content">
-        <div class="hcard-tag">★ Carro-chefe</div>
-        <div class="hcard-title">Pastel de Camarão</div>
-      </div>
-    </div>
-    <div class="hcard">
-      <img src="imagens/camarao_porcao.jpg" alt="Porção de Camarão">
-      <div class="hcard-overlay"></div>
-      <div class="hcard-content">
-        <div class="hcard-tag">Petisco</div>
-        <div class="hcard-title">Porção de Camarão</div>
-      </div>
-    </div>
-    <div class="hcard">
-      <img src="imagens/prato.jpg" alt="Prato do Dia">
-      <div class="hcard-overlay"></div>
-      <div class="hcard-content">
-        <div class="hcard-tag">Prato Principal</div>
-        <div class="hcard-title">Peixe do Dia</div>
-      </div>
-    </div>
-    <div class="hcard">
-      <img src="imagens/caipirinha.jpg" alt="Caipirinhas">
-      <div class="hcard-overlay"></div>
-      <div class="hcard-content">
-        <div class="hcard-tag">Bebidas</div>
-        <div class="hcard-title">Caipirinhas da Casa</div>
-      </div>
-    </div>
-  </div>
+  <div class="sh rv"><span class="sh-label">Destaques do Cardápio</span><h2 class="sh-title">Não <em>perca</em></h2></div>
+  <div class="hscroll-wrap"><div class="hscroll rv">
+    <div class="hcard"><img src="imagens/pastel.jpg" alt="Pastel de Camarão"><div class="hcard-ov"></div><div class="hcard-body"><div class="hcard-tag">★ Carro-chefe</div><div class="hcard-name">Pastel de Camarão</div></div></div>
+    <div class="hcard"><img src="imagens/camarao_porcao.jpg" alt="Camarão"><div class="hcard-ov"></div><div class="hcard-body"><div class="hcard-tag">Petisco</div><div class="hcard-name">Porção de Camarão</div></div></div>
+    <div class="hcard"><img src="imagens/prato.jpg" alt="Prato do Dia"><div class="hcard-ov"></div><div class="hcard-body"><div class="hcard-tag">Prato Principal</div><div class="hcard-name">Peixe do Dia</div></div></div>
+    <div class="hcard"><img src="imagens/caipirinha.jpg" alt="Caipirinhas"><div class="hcard-ov"></div><div class="hcard-body"><div class="hcard-tag">Bebidas</div><div class="hcard-name">Caipirinhas da Casa</div></div></div>
+  </div></div>
 
-  <!-- SOBRE TEASER -->
-  <div class="photo-block reveal">
-    <img src="imagens/deck.jpg" alt="Deck do restaurante">
-    <div class="photo-badge">
-      <div class="big">★ 4.8</div>
-      <div class="small">Avaliação dos clientes</div>
+  <!-- SOBRE SPLIT -->
+  <div class="rule-g"></div>
+  <div class="split rv">
+    <div class="split-photo">
+      <img src="imagens/deck.jpg" alt="Deck do restaurante">
+      <div class="split-badge"><div class="big">★ 4.8</div><div class="sm">Avaliação dos clientes</div></div>
+    </div>
+    <div class="split-text">
+      <span class="sh-label">O Restaurante</span>
+      <h2 class="sh-title">Mais do que<br>um <em>prato</em></h2>
+      <div class="sh-rule"></div>
+      <p>O <strong>Salomé Al Mare</strong> é referência no polo gastronômico da Ilha Primeira. Ambiente à beira da lagoa, frutos do mar frescos e o jeito carioca de receber bem.</p>
+      <p style="margin-top:0.7rem">Cada visita é uma fuga do cotidiano — acessível apenas de barco, com vista privilegiada e brisa que só a Gigoia proporciona.</p>
+      <a href="sobre.html" class="btn btn-ghost" style="margin-top:1.4rem;display:inline-flex">Nossa história →</a>
     </div>
   </div>
-  <div class="about-text reveal">
-    <span class="section-label">O Restaurante</span>
-    <h2 class="section-title">Mais do que<br>um <em>prato</em></h2>
-    <div class="divider"></div>
-    <p>O <strong>Salomé Al Mare</strong> é referência no polo gastronômico da Ilha Primeira. Ambiente rústico à beira da lagoa, frutos do mar frescos e aquele jeito carioca de receber bem.</p>
-    <a href="sobre.html" class="btn btn-outline" style="margin-top:0.6rem">Nossa História →</a>
-  </div>
-
-  <!-- ORNAMENT -->
-  <div style="padding:0 1.1rem">
-    <div class="ornament">⚓ Ilha Primeira</div>
-  </div>
+  <div class="rule-g"></div>
 
   <!-- CTA -->
-  <div class="cta-banner reveal">
-    <h3>Reserve sua<br>mesa na Ilha</h3>
-    <p>Fins de semana lotam rápido. Garanta o seu lugar à beira da lagoa.</p>
-    <a href="reservas.html" class="btn btn-dark-solid btn-full">Fazer Reserva</a>
+  <div class="cta rv">
+    <h3>Reserve sua mesa<br>na <em>Ilha</em></h3>
+    <p>Fins de semana lotam rápido. Garanta seu lugar à beira da lagoa.</p>
+    <a href="reservas.html" class="btn btn-gold">Fazer Reserva</a>
   </div>
 
 </main>
 
+<!-- BOTTOM NAV (mobile only) -->
 <nav class="bottom-nav">
-  <a href="index.html" class="nav-item active"><span class="nav-icon">🏠</span><span class="nav-label">Início</span></a>
-  <a href="cardapio.html" class="nav-item"><span class="nav-icon">🍽️</span><span class="nav-label">Cardápio</span></a>
-  <a href="galeria.html" class="nav-item"><span class="nav-icon">📷</span><span class="nav-label">Galeria</span></a>
-  <a href="localizacao.html" class="nav-item"><span class="nav-icon">📍</span><span class="nav-label">Local</span></a>
-  <a href="reservas.html" class="nav-item"><span class="nav-icon">📅</span><span class="nav-label">Reservar</span></a>
+  <a href="index.html" class="ni on"><span class="ni-icon">🏠</span><span class="ni-lbl">Início</span></a>
+  <a href="cardapio.html" class="ni"><span class="ni-icon">🍽️</span><span class="ni-lbl">Cardápio</span></a>
+  <a href="galeria.html" class="ni"><span class="ni-icon">📷</span><span class="ni-lbl">Galeria</span></a>
+  <a href="localizacao.html" class="ni"><span class="ni-icon">📍</span><span class="ni-lbl">Local</span></a>
+  <a href="reservas.html" class="ni"><span class="ni-icon">📅</span><span class="ni-lbl">Reservar</span></a>
 </nav>
 
 <script>
 if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
-const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');obs.unobserve(x.target);}}),{threshold:0.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 </script>
-</body>
-</html>
+</body></html>

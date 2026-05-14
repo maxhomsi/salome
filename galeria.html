@@ -1,97 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#111009">
-<link rel="manifest" href="manifest.json">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#0A0A09">
 <title>Galeria — Salomé Al Mare</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
-</head>
-<body>
+</head><body>
 <header class="app-header">
-  <a href="index.html" class="header-logo-wrap">
-    <img src="imagens/logo.png" alt="Logo" class="header-logo-img">
-    <div class="header-logo-text"><span class="name">Galeria</span><span class="sub">Salomé Al Mare</span></div>
-  </a>
-  <a href="reservas.html" class="header-btn">📅 Reservar</a>
+  <a href="index.html" class="logo-link"><img src="imagens/logo.png" alt="Logo" class="logo-img"><div class="logo-text"><span class="logo-name">Salomé Al Mare</span><span class="logo-sub">Ilha da Gigoia · Rio de Janeiro</span></div></a>
+  <ul class="nav-links"><li><a href="sobre.html">O Restaurante</a></li><li><a href="cardapio.html">Cardápio</a></li><li><a href="galeria.html" class="on">Galeria</a></li><li><a href="localizacao.html">Como Chegar</a></li></ul>
+  <a href="reservas.html" class="btn-res">Reservar</a>
 </header>
-
 <main class="page">
-  <div class="page-mini-hero">
-    <img src="imagens/lagoa.jpeg" alt="Lagoa">
-    <div class="page-mini-hero-content">
-      <div>
-        <span class="eyebrow">Imagens & Atmosfera</span>
-        <h1>A Ilha em <em>Fotos</em></h1>
-      </div>
-    </div>
+  <div class="mini-hero"><img src="imagens/lagoa.jpeg" alt="Lagoa"><div class="mini-hero-body"><div><span class="lbl">Imagens & Atmosfera</span><h1>A Ilha em <em>Fotos</em></h1></div></div></div>
+  <div class="gal" style="margin-top:4px">
+    <div class="gal-item rv"><img src="imagens/deck.jpg" alt="Deck"></div>
+    <div class="gal-item rv"><img src="imagens/pastel.jpg" alt="Pastel"></div>
+    <div class="gal-item rv"><img src="imagens/lagoa.jpeg" alt="Lagoa"></div>
+    <div class="gal-item rv"><img src="imagens/camarao_porcao.jpg" alt="Camarão"></div>
+    <div class="gal-item rv"><img src="imagens/prato.jpg" alt="Prato"></div>
+    <div class="gal-item rv"><img src="imagens/caipirinha.jpg" alt="Caipirinha"></div>
+    <div class="gal-item rv"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&w=600&q=70" alt="Barco"></div>
+    <div class="gal-item rv"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=600&q=70" alt="Mar"></div>
+    <div class="gal-item rv"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&w=600&q=70" alt="Salão"></div>
   </div>
-
-  <!-- GALERIA COM FOTOS REAIS -->
-  <div class="gallery-grid" style="padding:6px">
-    <div class="gallery-item reveal"><img src="imagens/deck.jpg" alt="Deck"></div>
-    <div class="gallery-item reveal"><img src="imagens/pastel.jpg" alt="Pastel"></div>
-    <div class="gallery-item reveal"><img src="imagens/lagoa.jpeg" alt="Lagoa"></div>
-    <div class="gallery-item reveal"><img src="imagens/camarao_porcao.jpg" alt="Camarão"></div>
-    <div class="gallery-item reveal"><img src="imagens/prato.jpg" alt="Prato"></div>
-    <div class="gallery-item reveal"><img src="imagens/caipirinha.jpg" alt="Caipirinha"></div>
-    <!-- Placeholders para fotos futuras -->
-    <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&w=500&q=75" alt="Barco"></div>
-    <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=500&q=75" alt="Praia"></div>
+  <div class="rule-g" style="margin-top:4px"></div>
+  <div class="sh rv"><span class="sh-label">Momentos na Ilha</span><h2 class="sh-title">Três experiências <em>únicas</em></h2></div>
+  <div class="exp-row rv" style="margin-top:1rem">
+    <div class="exp-card"><img src="imagens/deck.jpg" alt="Deck"><div class="exp-body"><div class="exp-num">01</div><div class="exp-title">O Deck à Beira da Lagoa</div><p class="exp-text">Mesas de madeira, guarda-sóis e a lagoa ali do lado. O cenário perfeito para uma tarde com frutos do mar.</p></div></div>
+    <div class="exp-card"><img src="imagens/prato.jpg" alt="Prato"><div class="exp-body"><div class="exp-num">02</div><div class="exp-title">A Refeição Perfeita</div><p class="exp-text">Peixe fresco, arroz temperado, legumes salteados. Ingredientes simples, feitos com cuidado.</p></div></div>
+    <div class="exp-card"><img src="imagens/lagoa.jpeg" alt="Pôr do sol"><div class="exp-body"><div class="exp-num">03</div><div class="exp-title">O Pôr do Sol na Ilha</div><p class="exp-text">Quando o sol desce sobre a lagoa, o Salomé ganha uma luz única. Vale ficar até o fim.</p></div></div>
   </div>
-
-  <!-- EXP CARDS -->
-  <div class="sec-header reveal" style="margin-top:0.8rem">
-    <span class="section-label">Momentos na Ilha</span>
-    <h2 class="section-title">Três experiências<br>que você <em>não esquece</em></h2>
-  </div>
-
-  <div class="exp-card reveal" style="margin-top:1rem">
-    <img src="imagens/deck.jpg" alt="Deck">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(17,16,9,.95),transparent 55%)"></div>
-    <div class="exp-card-content">
-      <div class="exp-card-num">01</div>
-      <div class="exp-card-title">O Deck à Beira da Lagoa</div>
-      <p class="exp-card-text">Mesas de madeira, guarda-sóis e a lagoa ali do lado. O cenário perfeito para uma tarde com frutos do mar.</p>
-    </div>
-  </div>
-
-  <div class="exp-card reveal">
-    <img src="imagens/prato.jpg" alt="Prato">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(17,16,9,.95),transparent 55%)"></div>
-    <div class="exp-card-content">
-      <div class="exp-card-num">02</div>
-      <div class="exp-card-title">A Refeição Perfeita</div>
-      <p class="exp-card-text">Peixe fresco, arroz temperado, legumes salteados. Ingredientes simples, feitos com cuidado e sabor.</p>
-    </div>
-  </div>
-
-  <div class="exp-card reveal" style="margin-bottom:1.1rem">
-    <img src="imagens/lagoa.jpeg" alt="Pôr do sol">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(17,16,9,.95),transparent 55%)"></div>
-    <div class="exp-card-content">
-      <div class="exp-card-num">03</div>
-      <div class="exp-card-title">O Pôr do Sol na Ilha</div>
-      <p class="exp-card-text">Quando o sol desce sobre a lagoa, o Salomé ganha uma luz dourada única. Vale ficar até o fim — com uma caipirinha na mão.</p>
-    </div>
-  </div>
+  <div style="height:2rem"></div>
 </main>
-
 <nav class="bottom-nav">
-  <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span><span class="nav-label">Início</span></a>
-  <a href="cardapio.html" class="nav-item"><span class="nav-icon">🍽️</span><span class="nav-label">Cardápio</span></a>
-  <a href="galeria.html" class="nav-item active"><span class="nav-icon">📷</span><span class="nav-label">Galeria</span></a>
-  <a href="localizacao.html" class="nav-item"><span class="nav-icon">📍</span><span class="nav-label">Local</span></a>
-  <a href="reservas.html" class="nav-item"><span class="nav-icon">📅</span><span class="nav-label">Reservar</span></a>
+  <a href="index.html" class="ni"><span class="ni-icon">🏠</span><span class="ni-lbl">Início</span></a>
+  <a href="cardapio.html" class="ni"><span class="ni-icon">🍽️</span><span class="ni-lbl">Cardápio</span></a>
+  <a href="galeria.html" class="ni on"><span class="ni-icon">📷</span><span class="ni-lbl">Galeria</span></a>
+  <a href="localizacao.html" class="ni"><span class="ni-icon">📍</span><span class="ni-lbl">Local</span></a>
+  <a href="reservas.html" class="ni"><span class="ni-icon">📅</span><span class="ni-lbl">Reservar</span></a>
 </nav>
-
-<script>
-const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-</body>
-</html>
+<script>const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');obs.unobserve(x.target);}}),{threshold:0.08});document.querySelectorAll('.rv').forEach(el=>obs.observe(el));</script>
+</body></html>

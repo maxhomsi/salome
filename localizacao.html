@@ -1,87 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#111009">
-<link rel="manifest" href="manifest.json">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#0A0A09">
 <title>Como Chegar — Salomé Al Mare</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
-</head>
-<body>
+</head><body>
 <header class="app-header">
-  <a href="index.html" class="header-logo-wrap">
-    <img src="imagens/logo.png" alt="Logo" class="header-logo-img">
-    <div class="header-logo-text"><span class="name">Como Chegar</span><span class="sub">Salomé Al Mare</span></div>
-  </a>
-  <a href="reservas.html" class="header-btn">📅 Reservar</a>
+  <a href="index.html" class="logo-link"><img src="imagens/logo.png" alt="Logo" class="logo-img"><div class="logo-text"><span class="logo-name">Salomé Al Mare</span><span class="logo-sub">Ilha da Gigoia · Rio de Janeiro</span></div></a>
+  <ul class="nav-links"><li><a href="sobre.html">O Restaurante</a></li><li><a href="cardapio.html">Cardápio</a></li><li><a href="galeria.html">Galeria</a></li><li><a href="localizacao.html" class="on">Como Chegar</a></li></ul>
+  <a href="reservas.html" class="btn-res">Reservar</a>
 </header>
-
 <main class="page">
-  <div class="page-mini-hero">
-    <img src="imagens/deck.jpg" alt="Deck">
-    <div class="page-mini-hero-content">
-      <div>
-        <span class="eyebrow">Localização & Acesso</span>
-        <h1>Como <em>Chegar</em></h1>
-      </div>
-    </div>
+  <div class="mini-hero"><img src="imagens/deck.jpg" alt="Deck"><div class="mini-hero-body"><div><span class="lbl">Localização & Acesso</span><h1>Como <em>Chegar</em></h1></div></div></div>
+  <div class="mapf"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.0!2d-43.497!3d-23.010!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda28!2sIlha+da+Gigoia!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen loading="lazy"></iframe></div>
+  <div style="padding:1rem 1.6rem;background:var(--dark);border-bottom:0.5px solid var(--border)">
+    <a href="https://maps.google.com/?q=Ilha+da+Gigoia+Rio+de+Janeiro" target="_blank" class="btn btn-ghost btn-full">📍 Abrir no Google Maps</a>
   </div>
-
-  <div class="map-frame">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.0!2d-43.497!3d-23.010!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda28!2sIlha+da+Gigoia!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy" title="Mapa"></iframe>
+  <div class="info-grid">
+    <div class="info-cell"><span class="info-lbl">Endereço</span><span class="info-val">Ilha Primeira, Gigoia — Barra da Tijuca, RJ</span></div>
+    <div class="info-cell"><span class="info-lbl">Horário</span><span class="info-val">Seg a Dom · 11h às 21h</span></div>
+    <div class="info-cell"><span class="info-lbl">Acesso</span><span class="info-val">Somente de barco — Canal das Taxas</span></div>
+    <div class="info-cell"><span class="info-lbl">Instagram</span><span class="info-val">@salomealmare</span></div>
   </div>
-  <div class="gold-line"></div>
-
-  <div style="padding:0.8rem 1.1rem">
-    <a href="https://maps.google.com/?q=Ilha+da+Gigoia+Rio+de+Janeiro" target="_blank" class="btn btn-outline btn-full">📍 Abrir no Google Maps</a>
+  <div class="rule-g"></div>
+  <div class="sh rv"><span class="sh-label">Passo a Passo</span><h2 class="sh-title">Como <em>chegar</em></h2></div>
+  <div class="steps-grid rv">
+    <div class="step"><div class="step-n">01</div><div class="step-title">Chegue à Barra da Tijuca</div><p class="step-desc">Vá até a Estrada do Pontal ou Píer da Ilha. Uber ou carro são as formas mais práticas.</p></div>
+    <div class="step"><div class="step-n">02</div><div class="step-title">Pegue o Barco</div><p class="step-desc">Travessia pelo Canal das Taxas leva ~5 minutos. Barqueiros fixos fazem o trajeto por valor simbólico.</p></div>
+    <div class="step"><div class="step-n">03</div><div class="step-title">Chegue na Ilha</div><p class="step-desc">Siga pelas ruelas do polo gastronômico. O Salomé fica à beira da lagoa — o cheiro já te guia.</p></div>
+    <div class="step" style="background:rgba(184,137,42,0.06)"><div class="step-n" style="color:var(--gold-lt)">💡</div><div class="step-title">Dica</div><p class="step-desc">Reserve antecipadamente nos fins de semana. As mesas à beira d'água somem rápido.</p></div>
   </div>
-
-  <div class="info-row">
-    <div class="info-card"><div class="info-label">Endereço</div><div class="info-value">Ilha Primeira, Gigoia — Barra da Tijuca, RJ</div></div>
-    <div class="info-card"><div class="info-label">Horário</div><div class="info-value">Seg a Dom<br>11h às 21h</div></div>
-    <div class="info-card"><div class="info-label">Acesso</div><div class="info-value">Somente de barco — Canal das Taxas</div></div>
-    <div class="info-card"><div class="info-label">Instagram</div><div class="info-value">@salomealmare</div></div>
+  <div class="rule-g"></div>
+  <div class="sh rv"><span class="sh-label">Transporte</span><h2 class="sh-title">Como chegar ao <em>píer</em></h2></div>
+  <div class="transport-grid rv">
+    <div class="tc"><div class="tc-icon">🚗</div><div class="tc-name">Carro / Moto</div><p class="tc-desc">Av. das Américas — estacionamento no local.</p></div>
+    <div class="tc"><div class="tc-icon">📱</div><div class="tc-name">Uber / 99</div><p class="tc-desc">"Píer da Ilha da Gigoia" — ponto conhecido pelos motoristas.</p></div>
+    <div class="tc"><div class="tc-icon">🚌</div><div class="tc-name">BRT / Ônibus</div><p class="tc-desc">Linhas da Av. das Américas — consulte o Moovit.</p></div>
+    <div class="tc"><div class="tc-icon">🚴</div><div class="tc-name">Bike</div><p class="tc-desc">Ciclovia com bicicletário na travessia.</p></div>
   </div>
-
-  <div class="gold-line"></div>
-
-  <div class="sec-header"><span class="section-label">Passo a Passo</span><h2 class="section-title">Como <em>chegar</em></h2></div>
-
-  <div class="step reveal"><div class="step-num">01</div><div><div class="step-title">Chegue à Barra da Tijuca</div><p class="step-desc">Vá até a Estrada do Pontal ou o Píer da Ilha. Uber ou carro são as formas mais práticas. Estacionamento pago nas proximidades.</p></div></div>
-  <div class="step reveal"><div class="step-num">02</div><div><div class="step-title">Pegue o Barco</div><p class="step-desc">A travessia pelo Canal das Taxas leva ~5 minutos. Barqueiros fixos fazem o trajeto por valor simbólico — e já faz parte da experiência.</p></div></div>
-  <div class="step reveal"><div class="step-num">03</div><div><div class="step-title">Chegue na Ilha</div><p class="step-desc">Ao desembarcar, siga pelas ruelas do polo gastronômico. O Salomé fica à beira da lagoa — o cheiro já te guia.</p></div></div>
-  <div class="step reveal" style="border-bottom:none"><div class="step-num">💡</div><div><div class="step-title">Dica de Ouro</div><p class="step-desc">Fins de semana lotam rápido. Reserve antecipadamente pelo WhatsApp para garantir mesa à beira da água.</p></div></div>
-
-  <div class="gold-line"></div>
-
-  <div class="feat-grid" style="padding:6px">
-    <div class="feat-card reveal"><div class="feat-icon">🚗</div><div class="feat-title">Carro / Moto</div><div class="feat-desc">Av. das Américas ou Estrada do Pontal. Estacionamento no local.</div></div>
-    <div class="feat-card reveal"><div class="feat-icon">📱</div><div class="feat-title">Uber / 99</div><div class="feat-desc">Peça "Píer da Ilha da Gigoia" — ponto bem conhecido.</div></div>
-    <div class="feat-card reveal"><div class="feat-icon">🚌</div><div class="feat-title">BRT / Ônibus</div><div class="feat-desc">Linhas da Av. das Américas. Consulte o Moovit.</div></div>
-    <div class="feat-card reveal"><div class="feat-icon">🚴</div><div class="feat-title">Bike</div><div class="feat-desc">Ciclovia na Av. das Américas com bicicletário na travessia.</div></div>
-  </div>
-
   <div class="social-row">
-    <a href="https://wa.me/5521999999999" class="social-btn btn-wpp" target="_blank">💬 WhatsApp</a>
-    <a href="https://www.instagram.com/salomealmare/" class="social-btn" target="_blank">📸 Instagram</a>
+    <a href="https://wa.me/5521999999999" class="soc-btn" style="background:#1a3325" target="_blank">💬 WhatsApp</a>
+    <a href="https://www.instagram.com/salomealmare/" class="soc-btn" target="_blank">📸 Instagram</a>
   </div>
 </main>
-
 <nav class="bottom-nav">
-  <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span><span class="nav-label">Início</span></a>
-  <a href="cardapio.html" class="nav-item"><span class="nav-icon">🍽️</span><span class="nav-label">Cardápio</span></a>
-  <a href="galeria.html" class="nav-item"><span class="nav-icon">📷</span><span class="nav-label">Galeria</span></a>
-  <a href="localizacao.html" class="nav-item active"><span class="nav-icon">📍</span><span class="nav-label">Local</span></a>
-  <a href="reservas.html" class="nav-item"><span class="nav-icon">📅</span><span class="nav-label">Reservar</span></a>
+  <a href="index.html" class="ni"><span class="ni-icon">🏠</span><span class="ni-lbl">Início</span></a>
+  <a href="cardapio.html" class="ni"><span class="ni-icon">🍽️</span><span class="ni-lbl">Cardápio</span></a>
+  <a href="galeria.html" class="ni"><span class="ni-icon">📷</span><span class="ni-lbl">Galeria</span></a>
+  <a href="localizacao.html" class="ni on"><span class="ni-icon">📍</span><span class="ni-lbl">Local</span></a>
+  <a href="reservas.html" class="ni"><span class="ni-icon">📅</span><span class="ni-lbl">Reservar</span></a>
 </nav>
-
-<script>
-const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); }}), { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-</body>
-</html>
+<script>const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');obs.unobserve(x.target);}}),{threshold:0.08});document.querySelectorAll('.rv').forEach(el=>obs.observe(el));</script>
+</body></html>
