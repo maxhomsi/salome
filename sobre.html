@@ -5,71 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#071420">
+<meta name="theme-color" content="#111009">
 <link rel="manifest" href="manifest.json">
-<title>O Restaurante — Salomé All Mare</title>
+<title>O Restaurante — Salomé Al Mare</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
-<style>
-.value-card{background:var(--ocean);border:.5px solid var(--border);padding:1.8rem 1.4rem;margin:0 1.4rem 8px}
-.value-icon{font-size:1.8rem;margin-bottom:.8rem}
-.value-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--sand);margin-bottom:.5rem}
-.timeline-item{display:flex;gap:1.2rem;padding:1.4rem;border-bottom:.5px solid var(--border)}
-.timeline-year{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--gold-light);font-weight:300;min-width:55px}
-.timeline-title{font-size:.9rem;color:var(--sand);font-weight:400;margin-bottom:.3rem}
-.timeline-text{font-size:.8rem;color:var(--muted);line-height:1.6}
-</style>
 </head>
 <body>
 <header class="app-header">
-  <a href="index.html" class="app-header-logo">O Restaurante <span>Salomé All Mare</span></a>
-  <a href="reservas.html" class="app-header-action">🍽️</a>
+  <a href="index.html" class="header-logo-wrap">
+    <img src="imagens/logo.png" alt="Logo" class="header-logo-img">
+    <div class="header-logo-text"><span class="name">O Restaurante</span><span class="sub">Salomé Al Mare</span></div>
+  </a>
+  <a href="reservas.html" class="header-btn">📅 Reservar</a>
 </header>
 
 <main class="page">
-  <div style="position:relative;height:200px;overflow:hidden">
-    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&w=800&q=80" alt="Restaurante" style="width:100%;height:100%;object-fit:cover;filter:brightness(.45)">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,1),rgba(7,20,32,.2) 60%);display:flex;align-items:flex-end;padding:1.5rem 1.4rem">
+  <div class="page-mini-hero">
+    <img src="imagens/deck.jpg" alt="Restaurante">
+    <div class="page-mini-hero-content">
       <div>
-        <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem">Nossa História</span>
-        <h1 style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--sand);line-height:.95">O <em style="font-style:italic;color:var(--gold-light)">Restaurante</em></h1>
+        <span class="eyebrow">Nossa História</span>
+        <h1>O <em>Restaurante</em></h1>
       </div>
     </div>
   </div>
 
-  <div class="about-img reveal">
-    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&w=800&q=85" alt="Cozinha">
-    <div class="about-badge">
+  <!-- LOGO SECTION -->
+  <div style="display:flex;flex-direction:column;align-items:center;padding:1.8rem 1.1rem;background:var(--dark);text-align:center">
+    <img src="imagens/logo.png" alt="Salomé Al Mare" style="width:110px;height:110px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);margin-bottom:1rem">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--sand)">Salomé <em style="font-style:italic;color:var(--gold-light)">Al Mare</em></h2>
+    <div class="ornament" style="margin:0.7rem 0;width:100%">⚓ Ilha Primeira · Gigoia · RJ</div>
+    <p style="font-size:0.84rem;line-height:1.8;color:var(--muted);max-width:320px">Desde 2012, servindo os melhores frutos do mar da Ilha Primeira — com o calor e a hospitalidade carioca que nos definem.</p>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="photo-block reveal">
+    <img src="imagens/lagoa.jpeg" alt="Pôr do Sol na Lagoa">
+    <div class="photo-badge">
       <div class="big">+10</div>
       <div class="small">Anos de história<br>na Ilha</div>
     </div>
   </div>
+
   <div class="about-text reveal">
     <span class="section-label">Sobre Nós</span>
     <h2 class="section-title">Nascidos<br>na <em>Ilha</em></h2>
     <div class="divider"></div>
-    <p>O <strong>Salomé All Mare</strong> nasceu do encontro entre a tradição carioca dos frutos do mar e a magia única de viver em uma ilha. Fundado há mais de uma década, é hoje referência no polo gastronômico da Ilha Primeira.</p>
-    <p>Nossa filosofia é simples: <strong>ingredientes frescos, ambiente acolhedor e um atendimento que faz você voltar</strong>. Somos mais do que um restaurante — somos um destino.</p>
+    <p>O <strong>Salomé Al Mare</strong> nasceu do encontro entre a tradição carioca dos frutos do mar e a magia única de viver em uma ilha. Hoje é referência no polo gastronômico da Ilha Primeira.</p>
+    <p>Nossa filosofia: <strong>ingredientes frescos, ambiente acolhedor e um atendimento que faz você voltar</strong>. Somos mais do que um restaurante — somos um destino.</p>
   </div>
+
+  <div class="gold-line"></div>
 
   <!-- VALUES -->
   <div class="sec-header"><span class="section-label">Nossos Valores</span><h2 class="section-title">O que nos <em>define</em></h2></div>
-  <div style="margin-top:1rem">
-    <div class="value-card reveal"><div class="value-icon">🌊</div><div class="value-title">Frescor do Mar</div><p style="font-size:.85rem;line-height:1.7;color:var(--muted)">Ingredientes selecionados diariamente. Frutos do mar frescos não são diferencial — são obrigação.</p></div>
-    <div class="value-card reveal"><div class="value-icon">🤝</div><div class="value-title">Hospitalidade Carioca</div><p style="font-size:.85rem;line-height:1.7;color:var(--muted)">Atendemos cada mesa como se fosse um amigo chegando em casa. O calor carioca em tudo que fazemos.</p></div>
-    <div class="value-card reveal" style="margin-bottom:0"><div class="value-icon">🏝️</div><div class="value-title">Experiência Única</div><p style="font-size:.85rem;line-height:1.7;color:var(--muted)">Uma ilha acessível apenas de barco, com vista privilegiada e brisa que só a lagoa proporciona.</p></div>
+  <div style="margin-top:0.6rem">
+    <div class="value-card reveal"><div class="value-icon">🌊</div><div class="value-title">Frescor do Mar</div><p style="font-size:0.82rem;line-height:1.7;color:var(--muted)">Ingredientes selecionados diariamente. Frutos do mar frescos não são diferencial — são obrigação.</p></div>
+    <div class="value-card reveal"><div class="value-icon">🤝</div><div class="value-title">Hospitalidade Carioca</div><p style="font-size:0.82rem;line-height:1.7;color:var(--muted)">Atendemos cada mesa como se fosse um amigo chegando em casa. O calor do Rio em tudo que fazemos.</p></div>
+    <div class="value-card reveal" style="margin-bottom:0"><div class="value-icon">🏝️</div><div class="value-title">Experiência Única</div><p style="font-size:0.82rem;line-height:1.7;color:var(--muted)">Uma ilha acessível apenas de barco, com vista da lagoa e aquela brisa que só a Gigoia proporciona.</p></div>
   </div>
 
+  <div class="gold-line" style="margin-top:6px"></div>
+
   <!-- TIMELINE -->
-  <div class="sec-header" style="margin-top:1rem"><span class="section-label">Trajetória</span><h2 class="section-title">Uma história de <em>sabor</em></h2></div>
+  <div class="sec-header"><span class="section-label">Trajetória</span><h2 class="section-title">Uma história de <em>sabor</em></h2></div>
   <div>
-    <div class="timeline-item reveal"><div class="timeline-year">2012</div><div><div class="timeline-title">A Fundação</div><p class="timeline-text">O Salomé abre as portas com menu enxuto e mesas simples à beira da lagoa. O pastel de camarão já conquista os primeiros visitantes.</p></div></div>
-    <div class="timeline-item reveal"><div class="timeline-year">2015</div><div><div class="timeline-title">Reconhecimento</div><p class="timeline-text">Consolida-se como ponto de referência no polo gastronômico da Ilha Primeira.</p></div></div>
-    <div class="timeline-item reveal"><div class="timeline-year">2019</div><div><div class="timeline-title">Expansão do Cardápio</div><p class="timeline-text">As tábuas de frutos do mar chegam ao menu e rapidamente viram o prato mais pedido da casa.</p></div></div>
+    <div class="timeline-item reveal"><div class="timeline-year">2012</div><div><div class="timeline-title">A Fundação</div><p class="timeline-text">Abre com menu enxuto à beira da lagoa. O pastel de camarão já conquista os primeiros visitantes.</p></div></div>
+    <div class="timeline-item reveal"><div class="timeline-year">2015</div><div><div class="timeline-title">Reconhecimento</div><p class="timeline-text">Consolida-se como referência no polo gastronômico da Ilha Primeira.</p></div></div>
+    <div class="timeline-item reveal"><div class="timeline-year">2019</div><div><div class="timeline-title">Expansão</div><p class="timeline-text">As tábuas de frutos do mar chegam ao menu e viram o prato mais pedido da casa.</p></div></div>
     <div class="timeline-item reveal" style="border-bottom:none"><div class="timeline-year">Hoje</div><div><div class="timeline-title">Um Destino</div><p class="timeline-text">Centenas de visitantes por semana, preservando o sabor caseiro e o acolhimento que o tornaram famoso.</p></div></div>
   </div>
 
-  <div style="padding:1.4rem">
+  <div style="padding:1.1rem">
     <a href="reservas.html" class="btn btn-primary btn-full">Reservar Mesa →</a>
   </div>
 </main>

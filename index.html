@@ -6,30 +6,34 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Salomé">
-<meta name="theme-color" content="#071420">
+<meta name="theme-color" content="#111009">
 <link rel="manifest" href="manifest.json">
-<title>Salomé All Mare</title>
+<title>Salomé All Mare — Ilha da Gigoia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="app-header">
-  <a href="index.html" class="app-header-logo">Salomé All Mare <span>Ilha da Gigoia · Rio de Janeiro</span></a>
-  <a href="reservas.html" class="app-header-action" title="Reservar">🍽️</a>
+  <a href="index.html" class="header-logo-wrap">
+    <img src="imagens/logo.png" alt="Salomé Al Mare Logo" class="header-logo-img">
+    <div class="header-logo-text">
+      <span class="name">Salomé Al Mare</span>
+      <span class="sub">Ilha da Gigoia · Rio de Janeiro</span>
+    </div>
+  </a>
+  <a href="reservas.html" class="header-btn">📅 Reservar</a>
 </header>
 
-<!-- PAGE -->
 <main class="page">
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=900&q=85')"></div>
+    <div class="hero-bg" style="background-image:url('imagens/lagoa.jpeg');background-position:center 30%"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-tag">Ilha Primeira · Barra da Tijuca</div>
-      <h1>Salomé<br><em>All Mare</em></h1>
+      <h1>Salomé<br><em>Al Mare</em></h1>
       <p class="hero-sub">Frutos do mar frescos à beira da lagoa, em uma ilha que só se chega de barco.</p>
       <div class="hero-actions">
         <a href="cardapio.html" class="btn btn-primary">Ver Cardápio</a>
@@ -37,6 +41,8 @@
       </div>
     </div>
   </div>
+
+  <div class="gold-line"></div>
 
   <!-- FEATURES -->
   <div class="feat-grid reveal">
@@ -46,7 +52,7 @@
       <div class="feat-desc">Seleção diária do melhor do mar</div>
     </div>
     <div class="feat-card">
-      <div class="feat-icon">🌊</div>
+      <div class="feat-icon">🌅</div>
       <div class="feat-title">Vista da Lagoa</div>
       <div class="feat-desc">Mesas à beira d'água</div>
     </div>
@@ -56,28 +62,20 @@
       <div class="feat-desc">Ilha exclusiva na Barra</div>
     </div>
     <div class="feat-card">
-      <div class="feat-icon">🏅</div>
+      <div class="feat-icon">🥐</div>
       <div class="feat-title">Melhor Pastel</div>
-      <div class="feat-desc">Famoso pastel de camarão</div>
+      <div class="feat-desc">Pastel de camarão da casa</div>
     </div>
   </div>
 
   <!-- DESTAQUES -->
   <div class="sec-header reveal">
     <span class="section-label">Destaques</span>
-    <h2 class="section-title">Não <em>perca</em></h2>
+    <h2 class="section-title">Não perca <em>estes</em></h2>
   </div>
-  <div class="hscroll" style="padding-top:1rem">
+  <div class="hscroll">
     <div class="hcard">
-      <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=400&q=80" alt="Tábua de Frutos do Mar">
-      <div class="hcard-overlay"></div>
-      <div class="hcard-content">
-        <div class="hcard-tag">Para Compartilhar</div>
-        <div class="hcard-title">Tábua de Frutos do Mar</div>
-      </div>
-    </div>
-    <div class="hcard">
-      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&w=400&q=80" alt="Pastel de Camarão">
+      <img src="imagens/pastel.jpg" alt="Pastel de Camarão">
       <div class="hcard-overlay"></div>
       <div class="hcard-content">
         <div class="hcard-tag">★ Carro-chefe</div>
@@ -85,70 +83,67 @@
       </div>
     </div>
     <div class="hcard">
-      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=400&q=80" alt="Prato do Chef">
+      <img src="imagens/camarao_porcao.jpg" alt="Porção de Camarão">
       <div class="hcard-overlay"></div>
       <div class="hcard-content">
-        <div class="hcard-tag">Prato Principal</div>
-        <div class="hcard-title">Moqueca Carioca</div>
+        <div class="hcard-tag">Petisco</div>
+        <div class="hcard-title">Porção de Camarão</div>
       </div>
     </div>
     <div class="hcard">
-      <img src="https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=400&q=80" alt="Vista da Lagoa">
+      <img src="imagens/prato.jpg" alt="Prato do Dia">
       <div class="hcard-overlay"></div>
       <div class="hcard-content">
-        <div class="hcard-tag">Atmosfera</div>
-        <div class="hcard-title">Vista da Lagoa</div>
+        <div class="hcard-tag">Prato Principal</div>
+        <div class="hcard-title">Peixe do Dia</div>
+      </div>
+    </div>
+    <div class="hcard">
+      <img src="imagens/caipirinha.jpg" alt="Caipirinhas">
+      <div class="hcard-overlay"></div>
+      <div class="hcard-content">
+        <div class="hcard-tag">Bebidas</div>
+        <div class="hcard-title">Caipirinhas da Casa</div>
       </div>
     </div>
   </div>
 
   <!-- SOBRE TEASER -->
-  <div class="about-img reveal">
-    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&w=800&q=85" alt="Interior do restaurante">
-    <div class="about-badge">
+  <div class="photo-block reveal">
+    <img src="imagens/deck.jpg" alt="Deck do restaurante">
+    <div class="photo-badge">
       <div class="big">★ 4.8</div>
       <div class="small">Avaliação dos clientes</div>
     </div>
   </div>
   <div class="about-text reveal">
     <span class="section-label">O Restaurante</span>
-    <h2 class="section-title">Uma experiência<br>além do <em>prato</em></h2>
+    <h2 class="section-title">Mais do que<br>um <em>prato</em></h2>
     <div class="divider"></div>
-    <p>O <strong>Salomé All Mare</strong> é um dos pilares do polo gastronômico da Ilha Primeira, na Barra da Tijuca. Ambiente acolhedor, vista para a lagoa e os melhores frutos do mar do Rio.</p>
-    <a href="sobre.html" class="btn btn-outline" style="margin-top:0.8rem">Nossa História →</a>
+    <p>O <strong>Salomé Al Mare</strong> é referência no polo gastronômico da Ilha Primeira. Ambiente rústico à beira da lagoa, frutos do mar frescos e aquele jeito carioca de receber bem.</p>
+    <a href="sobre.html" class="btn btn-outline" style="margin-top:0.6rem">Nossa História →</a>
   </div>
 
-  <!-- CTA BANNER -->
+  <!-- ORNAMENT -->
+  <div style="padding:0 1.1rem">
+    <div class="ornament">⚓ Ilha Primeira</div>
+  </div>
+
+  <!-- CTA -->
   <div class="cta-banner reveal">
-    <h3>Reserve sua<br><em style="color:rgba(251,247,239,0.8)">mesa hoje</em></h3>
+    <h3>Reserve sua<br>mesa na Ilha</h3>
     <p>Fins de semana lotam rápido. Garanta o seu lugar à beira da lagoa.</p>
-    <a href="reservas.html" class="btn btn-ivory btn-full">Fazer Reserva</a>
+    <a href="reservas.html" class="btn btn-dark-solid btn-full">Fazer Reserva</a>
   </div>
 
 </main>
 
-<!-- BOTTOM NAV -->
 <nav class="bottom-nav">
-  <a href="index.html" class="nav-item active">
-    <span class="nav-icon">🏠</span>
-    <span class="nav-label">Início</span>
-  </a>
-  <a href="cardapio.html" class="nav-item">
-    <span class="nav-icon">🍽️</span>
-    <span class="nav-label">Cardápio</span>
-  </a>
-  <a href="galeria.html" class="nav-item">
-    <span class="nav-icon">📷</span>
-    <span class="nav-label">Galeria</span>
-  </a>
-  <a href="localizacao.html" class="nav-item">
-    <span class="nav-icon">📍</span>
-    <span class="nav-label">Local</span>
-  </a>
-  <a href="reservas.html" class="nav-item">
-    <span class="nav-icon">📅</span>
-    <span class="nav-label">Reservar</span>
-  </a>
+  <a href="index.html" class="nav-item active"><span class="nav-icon">🏠</span><span class="nav-label">Início</span></a>
+  <a href="cardapio.html" class="nav-item"><span class="nav-icon">🍽️</span><span class="nav-label">Cardápio</span></a>
+  <a href="galeria.html" class="nav-item"><span class="nav-icon">📷</span><span class="nav-label">Galeria</span></a>
+  <a href="localizacao.html" class="nav-item"><span class="nav-icon">📍</span><span class="nav-label">Local</span></a>
+  <a href="reservas.html" class="nav-item"><span class="nav-icon">📅</span><span class="nav-label">Reservar</span></a>
 </nav>
 
 <script>

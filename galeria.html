@@ -5,84 +5,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#071420">
+<meta name="theme-color" content="#111009">
 <link rel="manifest" href="manifest.json">
-<title>Galeria — Salomé All Mare</title>
+<title>Galeria — Salomé Al Mare</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
-<style>
-.exp-card{position:relative;overflow:hidden;margin:0 1.4rem 12px;border:.5px solid var(--border)}
-.exp-card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:brightness(.6)}
-.exp-card-content{position:absolute;bottom:0;left:0;right:0;padding:1.4rem}
-.exp-card-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--coral);font-weight:300;opacity:.3;line-height:1}
-.exp-card-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--sand);font-weight:300;line-height:1.2}
-.exp-card-text{font-size:.8rem;line-height:1.65;color:var(--muted);margin-top:.4rem}
-</style>
 </head>
 <body>
 <header class="app-header">
-  <a href="index.html" class="app-header-logo">Galeria <span>Salomé All Mare</span></a>
-  <a href="reservas.html" class="app-header-action">🍽️</a>
+  <a href="index.html" class="header-logo-wrap">
+    <img src="imagens/logo.png" alt="Logo" class="header-logo-img">
+    <div class="header-logo-text"><span class="name">Galeria</span><span class="sub">Salomé Al Mare</span></div>
+  </a>
+  <a href="reservas.html" class="header-btn">📅 Reservar</a>
 </header>
 
 <main class="page">
-  <div style="position:relative;height:200px;overflow:hidden">
-    <img src="https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=800&q=80" alt="Galeria" style="width:100%;height:100%;object-fit:cover;filter:brightness(.45)">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,1),rgba(7,20,32,.2) 60%);display:flex;align-items:flex-end;padding:1.5rem 1.4rem">
+  <div class="page-mini-hero">
+    <img src="imagens/lagoa.jpeg" alt="Lagoa">
+    <div class="page-mini-hero-content">
       <div>
-        <span style="font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.4rem">Imagens & Atmosfera</span>
-        <h1 style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--sand);line-height:.95">A Ilha em <em style="font-style:italic;color:var(--gold-light)">Fotos</em></h1>
+        <span class="eyebrow">Imagens & Atmosfera</span>
+        <h1>A Ilha em <em>Fotos</em></h1>
       </div>
     </div>
   </div>
 
-  <!-- MASONRY -->
-  <div class="gallery-grid" style="padding:4px 4px">
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&w=500&q=80" alt="Restaurante"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&w=500&q=80" alt="Frutos do mar"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&w=500&q=80" alt="Camarão"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=500&q=80" alt="Lagoa"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=500&q=80" alt="Prato"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&w=500&q=80" alt="Salão"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=500&q=80" alt="Pôr do sol"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&w=500&q=80" alt="Barco"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&w=500&q=80" alt="Cozinha"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&w=500&q=80" alt="Frutos do mar 2"></div>
+  <!-- GALERIA COM FOTOS REAIS -->
+  <div class="gallery-grid" style="padding:6px">
+    <div class="gallery-item reveal"><img src="imagens/deck.jpg" alt="Deck"></div>
+    <div class="gallery-item reveal"><img src="imagens/pastel.jpg" alt="Pastel"></div>
+    <div class="gallery-item reveal"><img src="imagens/lagoa.jpeg" alt="Lagoa"></div>
+    <div class="gallery-item reveal"><img src="imagens/camarao_porcao.jpg" alt="Camarão"></div>
+    <div class="gallery-item reveal"><img src="imagens/prato.jpg" alt="Prato"></div>
+    <div class="gallery-item reveal"><img src="imagens/caipirinha.jpg" alt="Caipirinha"></div>
+    <!-- Placeholders para fotos futuras -->
+    <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&w=500&q=75" alt="Barco"></div>
+    <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=500&q=75" alt="Praia"></div>
   </div>
 
-  <!-- EXPERIENCE CARDS -->
-  <div style="padding:1.8rem 1.4rem 0.5rem">
-    <span class="section-label">Momentos Únicos</span>
+  <!-- EXP CARDS -->
+  <div class="sec-header reveal" style="margin-top:0.8rem">
+    <span class="section-label">Momentos na Ilha</span>
     <h2 class="section-title">Três experiências<br>que você <em>não esquece</em></h2>
   </div>
 
-  <div class="exp-card reveal" style="margin-top:1.2rem">
-    <img src="https://images.unsplash.com/photo-1501786223405-6d024d7c3b8d?auto=format&w=800&q=80" alt="Chegada de barco">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,.92),transparent 55%)"></div>
+  <div class="exp-card reveal" style="margin-top:1rem">
+    <img src="imagens/deck.jpg" alt="Deck">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(17,16,9,.95),transparent 55%)"></div>
     <div class="exp-card-content">
       <div class="exp-card-num">01</div>
-      <div class="exp-card-title">A Chegada pela Lagoa</div>
-      <p class="exp-card-text">A travessia de barco já é parte da experiência. Você chega com vento no rosto e a lagoa ao redor.</p>
+      <div class="exp-card-title">O Deck à Beira da Lagoa</div>
+      <p class="exp-card-text">Mesas de madeira, guarda-sóis e a lagoa ali do lado. O cenário perfeito para uma tarde com frutos do mar.</p>
     </div>
   </div>
 
   <div class="exp-card reveal">
-    <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&w=800&q=80" alt="Refeição">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,.92),transparent 55%)"></div>
+    <img src="imagens/prato.jpg" alt="Prato">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(17,16,9,.95),transparent 55%)"></div>
     <div class="exp-card-content">
       <div class="exp-card-num">02</div>
-      <div class="exp-card-title">A Refeição na Água</div>
-      <p class="exp-card-text">Mesas à beira da lagoa, frutos do mar fresquíssimos e uma vista que faz o tempo parar.</p>
+      <div class="exp-card-title">A Refeição Perfeita</div>
+      <p class="exp-card-text">Peixe fresco, arroz temperado, legumes salteados. Ingredientes simples, feitos com cuidado e sabor.</p>
     </div>
   </div>
 
-  <div class="exp-card reveal" style="margin-bottom:1.4rem">
-    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&w=800&q=80" alt="Pôr do sol">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,20,32,.92),transparent 55%)"></div>
+  <div class="exp-card reveal" style="margin-bottom:1.1rem">
+    <img src="imagens/lagoa.jpeg" alt="Pôr do sol">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(17,16,9,.95),transparent 55%)"></div>
     <div class="exp-card-content">
       <div class="exp-card-num">03</div>
       <div class="exp-card-title">O Pôr do Sol na Ilha</div>
-      <p class="exp-card-text">Quando o sol desce sobre a lagoa, o Salomé ganha uma luz dourada única. Vale ficar até o fim.</p>
+      <p class="exp-card-text">Quando o sol desce sobre a lagoa, o Salomé ganha uma luz dourada única. Vale ficar até o fim — com uma caipirinha na mão.</p>
     </div>
   </div>
 </main>

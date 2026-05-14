@@ -5,115 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#071420">
+<meta name="theme-color" content="#111009">
 <link rel="manifest" href="manifest.json">
-<title>Localização — Salomé All Mare</title>
+<title>Como Chegar — Salomé Al Mare</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
 <header class="app-header">
-  <a href="index.html" class="app-header-logo">Como Chegar <span>Salomé All Mare</span></a>
-  <a href="reservas.html" class="app-header-action">🍽️</a>
+  <a href="index.html" class="header-logo-wrap">
+    <img src="imagens/logo.png" alt="Logo" class="header-logo-img">
+    <div class="header-logo-text"><span class="name">Como Chegar</span><span class="sub">Salomé Al Mare</span></div>
+  </a>
+  <a href="reservas.html" class="header-btn">📅 Reservar</a>
 </header>
 
 <main class="page">
-  <!-- MAP -->
-  <div class="map-frame" style="height:280px">
+  <div class="page-mini-hero">
+    <img src="imagens/deck.jpg" alt="Deck">
+    <div class="page-mini-hero-content">
+      <div>
+        <span class="eyebrow">Localização & Acesso</span>
+        <h1>Como <em>Chegar</em></h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="map-frame">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.0!2d-43.497!3d-23.010!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bda28!2sIlha+da+Gigoia!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen="" loading="lazy" title="Mapa"></iframe>
   </div>
+  <div class="gold-line"></div>
 
-  <!-- CTA MAP BUTTON -->
-  <div style="padding:1rem 1.4rem;background:var(--ocean);border-bottom:.5px solid var(--border)">
-    <a href="https://maps.google.com/?q=Ilha+da+Gigoia+Rio+de+Janeiro" target="_blank" class="btn btn-outline btn-full" style="justify-content:center;gap:8px">
-      📍 Abrir no Google Maps
-    </a>
+  <div style="padding:0.8rem 1.1rem">
+    <a href="https://maps.google.com/?q=Ilha+da+Gigoia+Rio+de+Janeiro" target="_blank" class="btn btn-outline btn-full">📍 Abrir no Google Maps</a>
   </div>
 
-  <!-- INFO CARDS -->
-  <div class="info-row" style="padding-top:1.4rem">
-    <div class="info-card">
-      <div class="info-label">Endereço</div>
-      <div class="info-value">Ilha Primeira, Gigoia — Barra da Tijuca, RJ</div>
-    </div>
-    <div class="info-card">
-      <div class="info-label">Horário</div>
-      <div class="info-value">Seg a Dom<br>11h às 21h</div>
-    </div>
-    <div class="info-card">
-      <div class="info-label">Acesso</div>
-      <div class="info-value">Somente de barco pelo Canal das Taxas</div>
-    </div>
-    <div class="info-card">
-      <div class="info-label">Contato</div>
-      <div class="info-value">@salomealmare<br>WhatsApp</div>
-    </div>
+  <div class="info-row">
+    <div class="info-card"><div class="info-label">Endereço</div><div class="info-value">Ilha Primeira, Gigoia — Barra da Tijuca, RJ</div></div>
+    <div class="info-card"><div class="info-label">Horário</div><div class="info-value">Seg a Dom<br>11h às 21h</div></div>
+    <div class="info-card"><div class="info-label">Acesso</div><div class="info-value">Somente de barco — Canal das Taxas</div></div>
+    <div class="info-card"><div class="info-label">Instagram</div><div class="info-value">@salomealmare</div></div>
   </div>
 
-  <!-- STEPS -->
-  <div class="sec-header" style="padding-bottom:0.5rem">
-    <span class="section-label">Passo a Passo</span>
-    <h2 class="section-title">Como <em>chegar</em></h2>
+  <div class="gold-line"></div>
+
+  <div class="sec-header"><span class="section-label">Passo a Passo</span><h2 class="section-title">Como <em>chegar</em></h2></div>
+
+  <div class="step reveal"><div class="step-num">01</div><div><div class="step-title">Chegue à Barra da Tijuca</div><p class="step-desc">Vá até a Estrada do Pontal ou o Píer da Ilha. Uber ou carro são as formas mais práticas. Estacionamento pago nas proximidades.</p></div></div>
+  <div class="step reveal"><div class="step-num">02</div><div><div class="step-title">Pegue o Barco</div><p class="step-desc">A travessia pelo Canal das Taxas leva ~5 minutos. Barqueiros fixos fazem o trajeto por valor simbólico — e já faz parte da experiência.</p></div></div>
+  <div class="step reveal"><div class="step-num">03</div><div><div class="step-title">Chegue na Ilha</div><p class="step-desc">Ao desembarcar, siga pelas ruelas do polo gastronômico. O Salomé fica à beira da lagoa — o cheiro já te guia.</p></div></div>
+  <div class="step reveal" style="border-bottom:none"><div class="step-num">💡</div><div><div class="step-title">Dica de Ouro</div><p class="step-desc">Fins de semana lotam rápido. Reserve antecipadamente pelo WhatsApp para garantir mesa à beira da água.</p></div></div>
+
+  <div class="gold-line"></div>
+
+  <div class="feat-grid" style="padding:6px">
+    <div class="feat-card reveal"><div class="feat-icon">🚗</div><div class="feat-title">Carro / Moto</div><div class="feat-desc">Av. das Américas ou Estrada do Pontal. Estacionamento no local.</div></div>
+    <div class="feat-card reveal"><div class="feat-icon">📱</div><div class="feat-title">Uber / 99</div><div class="feat-desc">Peça "Píer da Ilha da Gigoia" — ponto bem conhecido.</div></div>
+    <div class="feat-card reveal"><div class="feat-icon">🚌</div><div class="feat-title">BRT / Ônibus</div><div class="feat-desc">Linhas da Av. das Américas. Consulte o Moovit.</div></div>
+    <div class="feat-card reveal"><div class="feat-icon">🚴</div><div class="feat-title">Bike</div><div class="feat-desc">Ciclovia na Av. das Américas com bicicletário na travessia.</div></div>
   </div>
 
-  <div class="step reveal">
-    <div class="step-num">01</div>
-    <div>
-      <div class="step-title">Chegue à Barra da Tijuca</div>
-      <p class="step-desc">Vá até a Estrada do Pontal ou o Píer da Ilha. Uber ou carro próprio são as formas mais práticas. Há estacionamento pago nas proximidades.</p>
-    </div>
-  </div>
-  <div class="step reveal">
-    <div class="step-num">02</div>
-    <div>
-      <div class="step-title">Pegue o Barco para a Ilha</div>
-      <p class="step-desc">A travessia pelo Canal das Taxas leva cerca de 5 minutos. Barqueiros fixos fazem o trajeto por valor simbólico — e já faz parte da experiência.</p>
-    </div>
-  </div>
-  <div class="step reveal">
-    <div class="step-num">03</div>
-    <div>
-      <div class="step-title">Desembarque na Ilha Primeira</div>
-      <p class="step-desc">Ao desembarcar, siga pelas ruelas do polo gastronômico. O Salomé fica à beira da lagoa — você vai sentir o cheiro antes de ver a placa.</p>
-    </div>
-  </div>
-  <div class="step reveal">
-    <div class="step-num">04</div>
-    <div>
-      <div class="step-title">Dica de Ouro 💡</div>
-      <p class="step-desc">Chegue no fim da tarde para aproveitar o pôr do sol na lagoa. E reserve com antecedência nos fins de semana — as mesas à beira d'água somem rápido.</p>
-    </div>
-  </div>
-
-  <!-- TRANSPORT -->
-  <div class="sec-header"><span class="section-label">Transporte</span><h2 class="section-title">Como chegar ao <em>píer</em></h2></div>
-
-  <div class="feat-grid" style="padding-top:0.5rem">
-    <div class="feat-card reveal">
-      <div class="feat-icon">🚗</div>
-      <div class="feat-title">Carro / Moto</div>
-      <div class="feat-desc">Av. das Américas ou Estrada do Pontal. Estacionamento pago no local.</div>
-    </div>
-    <div class="feat-card reveal">
-      <div class="feat-icon">📱</div>
-      <div class="feat-title">Uber / 99</div>
-      <div class="feat-desc">Peça para "Píer da Ilha da Gigoia". Ponto bem conhecido pelos motoristas.</div>
-    </div>
-    <div class="feat-card reveal">
-      <div class="feat-icon">🚌</div>
-      <div class="feat-title">Ônibus / BRT</div>
-      <div class="feat-desc">Linhas da Av. das Américas com paradas próximas. Consulte o Moovit.</div>
-    </div>
-    <div class="feat-card reveal">
-      <div class="feat-icon">🚴</div>
-      <div class="feat-title">Bike</div>
-      <div class="feat-desc">Ciclovia na Av. das Américas. Bicicletário disponível na travessia.</div>
-    </div>
-  </div>
-
-  <!-- SOCIAL -->
-  <div class="social-row" style="padding-top:1rem">
-    <a href="https://wa.me/5521999999999" class="social-btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+  <div class="social-row">
+    <a href="https://wa.me/5521999999999" class="social-btn btn-wpp" target="_blank">💬 WhatsApp</a>
     <a href="https://www.instagram.com/salomealmare/" class="social-btn" target="_blank">📸 Instagram</a>
   </div>
 </main>
